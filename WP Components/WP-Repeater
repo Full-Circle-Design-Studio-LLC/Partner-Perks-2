@@ -1,0 +1,29 @@
+<?php
+  // Check rows exists.
+  if( have_rows('EDIT-repeater-name') ):
+      // Loop through rows.
+      while( have_rows('EDIT-repeater-name') ) : the_row();
+
+          // Load sub field value.
+          $sub_value = get_sub_field('sub_field');
+          // Do something...
+?>
+
+
+<!-- CONTENT GOES HERE -->
+
+<?php $image = get_sub_field('hero-image'); ?>
+
+ <?php the_sub_field('field') ?>
+
+<!-- END CONTENT -->
+
+
+<?php
+    // End loop.
+endwhile;
+// No value.
+else :
+// Do something...
+endif;
+?>

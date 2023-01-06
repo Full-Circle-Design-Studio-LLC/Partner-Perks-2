@@ -1,0 +1,291 @@
+/* COLOR PALETTE ---------------------------------------- */
+/* close color palette */
+@keyframes loginSlide {
+  100% {
+    transform: translateX(-160px);
+  }
+}
+@keyframes slideBack {
+  0% {
+    transform: translateX(-160px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes loginSlideSmall {
+  100% {
+    transform: translateX(-160px);
+    width: 100%;
+    margin: 0;
+    padding-left: 15px;
+  }
+}
+@keyframes slideBackSmall {
+  0% {
+    transform: translateX(-160px);
+    width: 100%;
+    margin: 0;
+    padding-left: 15px;
+  }
+  100% {
+    transform: translateX(0);
+    width: 200px;
+    margin-right: 15px;
+    padding-left: 0;
+  }
+}
+.culture-subnav {
+  display: flex;
+  z-index: 199;
+  box-shadow: 0px 0px 5px gray;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: fixed;
+  top: 65px;
+  height: 50px;
+  width: 100vw;
+  padding-left: 15px;
+  padding-top: 10px;
+  transition: 0.5s;
+}
+.culture-subnav .culture-link {
+  width: 200px;
+  float: left;
+  color: #00AC98;
+  font-weight: 900;
+  font-size: 14px !important;
+  text-align: left !important;
+  letter-spacing: 3px;
+  font-family: gotham;
+}
+.culture-subnav .culture-link img {
+  width: 100%;
+  float: left;
+}
+.culture-subnav ul {
+  visibility: hidden;
+  height: 0;
+  transition: 0;
+  opacity: 0;
+  left: 0;
+}
+.culture-subnav .subnav-button {
+  background-color: rgba(225, 225, 225, 0);
+  border: 0;
+  float: right;
+  margin-right: 25px;
+}
+.culture-subnav .subnav-button .arrow-expand {
+  transform: rotate(90deg);
+  width: 15px;
+  transition: 0.25s;
+}
+.culture-subnav .subnav-profile-icon {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 15px;
+}
+.culture-subnav .subnav-login {
+  display: flex;
+  position: absolute;
+  right: -160px;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  margin-left: auto;
+  margin-right: 15px;
+}
+.culture-subnav .subnav-login a {
+  color: black;
+  text-decoration: none;
+}
+.culture-subnav .subnav-login a:hover {
+  font-weight: bold;
+}
+.culture-subnav .subnav-login:hover {
+  cursor: pointer;
+}
+.culture-subnav .animate-login {
+  animation-name: loginSlide;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+.culture-subnav .slide-back {
+  animation-name: slideBack;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+.culture-subnav .animate-login-small {
+  animation-name: loginSlideSmall;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  background: rgba(255, 255, 255, 0.95);
+}
+.culture-subnav .slide-back-small {
+  animation-name: slideBackSmall;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+.culture-subnav .hello-user {
+  display: none;
+}
+
+/* CLOSE SUBNAV */
+@media screen and (max-width: 540px) {
+  .culture-subnav .subnav-login {
+    justify-content: flex-start;
+  }
+  .culture-subnav .subnav-login a {
+    margin-left: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .culture-subnav {
+    top: 70px;
+  }
+
+  .nav-up {
+    top: -40px;
+  }
+}
+/*close media-767px*/
+@media (min-width: 1024px) {
+  .culture-subnav {
+    top: 70px;
+  }
+  .culture-subnav ul {
+    min-width: 20vw;
+    max-width: 20vw;
+    text-align: center;
+    margin-left: 40vw;
+    float: left;
+    position: absolute;
+    padding-left: 0;
+    top: 12.5px;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .culture-subnav ul li {
+    width: 33.33%;
+    float: left;
+  }
+  .culture-subnav a {
+    font-family: gotham;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .nav-up {
+    top: -40px;
+  }
+
+  .culture-overview svg {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .culture-subnav {
+    z-index: 199;
+    box-shadow: 0px 0px 5px gray;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: fixed;
+    height: 50px;
+    width: 100vw;
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+  .culture-subnav a {
+    float: left;
+  }
+  .culture-subnav a img {
+    width: 100%;
+    float: left;
+  }
+  .culture-subnav ul {
+    visibility: visible;
+    min-width: 40vw !important;
+    left: 35vw;
+    text-align: center;
+    float: left;
+    position: absolute;
+    margin-left: 0;
+    height: auto;
+    border-top: 0;
+    padding-top: 0;
+    opacity: 1 !important;
+    transition: 0.25s;
+    transition-delay: 0.25s;
+  }
+  .culture-subnav ul li {
+    width: auto;
+    float: left;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 25%;
+  }
+  .culture-subnav a {
+    font-family: gotham;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-align: center;
+    float: left;
+  }
+  .culture-subnav a:hover {
+    font-weight: 900;
+    color: #333033;
+  }
+
+  .culture-add-padding {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  .culture-add-padding h2 {
+    text-align: right;
+  }
+}
+/*close media-1024px*/
+@media (min-width: 1200px) {
+  .nav-up {
+    top: -40px !important;
+  }
+
+  .culture-subnav {
+    top: 45px;
+  }
+  .culture-subnav ul {
+    visibility: visible;
+    min-width: 25vw;
+    max-width: 25vw;
+    left: 31vw;
+    text-align: center;
+    float: left;
+    position: absolute;
+    margin-left: 0;
+    height: auto;
+    border-top: 0;
+    padding-top: 0;
+    opacity: 1 !important;
+    transition: 0.25s;
+    transition-delay: 0.25s;
+  }
+  .culture-subnav ul li {
+    width: auto;
+    float: left;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 25%;
+  }
+}
+/*close media-1200px*/
+
+/*# sourceMappingURL=_perks-subnav.css.map */

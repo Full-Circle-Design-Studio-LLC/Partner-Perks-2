@@ -1,0 +1,1238 @@
+@use 'components/components';
+@use 'components/variables' as v;
+@use 'components/perks-subnav';
+$phone-max: 700px;
+$tablet-max: 1100px;
+
+:root {
+  --more-cards-height: 1600px;
+}
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes disappear {
+  0% {opacity: 1;}
+  100% {opacity: 0; visibility: hidden}
+}
+@keyframes hideCards {
+  0% {height: var(--more-cards-height);}
+  100% {height: 0;}
+}
+@keyframes unhideCards {
+  0% {height: 0;}
+  100% {height: var(--more-cards-height);}
+}
+
+// registration
+.register-spacing {
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+.user-registration {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30vh;
+  margin: auto;
+  width: 300px;
+  border: none;
+  @media screen and (min-width: 769px) {
+    width: 625px;
+  }
+}
+.ur-submit-button {
+  margin: auto!important;
+}
+#user_login,
+#user_pass,
+#user_email,
+#user_confirm_password {
+  border: #d9d9d9 1px solid!important;
+}
+.form-row {
+  width: 250px;
+}
+
+* {
+  font-family: gotham;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+.footer-career-hub {
+  display: none!important;
+}
+footer {
+  ul {
+    list-style: none;
+  }
+}
+.hello-user {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 25px;
+  align-items: center;
+  padding-bottom: 5px;
+  a {
+    color: #22AC9B;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #22AC9B;
+  }
+}
+.logout {
+  margin-left: 15px;
+  width: 56px;
+}
+
+.pp-logo {
+  height: 30px;
+  width: auto;
+}
+.wpcf7-response-output {
+  border-color: #A1DFD4;
+  width: fit-content;
+  margin: auto!important;
+}
+.wpcf7-response-output {
+  border-color: #A1DFD4!important;
+  margin-top: 20px !important;
+}
+.contact-form-hide,
+.contact-form-show {
+  z-index: 302;
+  display: flex;
+  position: fixed;
+  top: 14vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80vw;
+  label {
+    width: 100%;
+  }
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+  }
+  input {
+    height: 45px;
+    margin-bottom: 14px;
+    margin-top: 4px;
+  }
+  .wpcf7-form-control {
+    max-height: 150px;
+    margin-top: 4px;
+  }
+  .form-your-name-and-email {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .form-company,
+  .form-message {
+    width: 100%;
+  }
+  .submit {
+    position: relative;
+    display: flex;
+    input {
+      width: 180px;
+      height: 50px;
+      font-size: 30px;
+      color: white;
+      background-color: #A1DFD4;
+      border: none;
+      margin: auto;
+      margin-top: 6px;
+    }
+    .wpcf7-spinner {
+      position: absolute;
+      right: -27px;
+      top: 16px;
+    }
+    .wpcf7-form-control {
+      font-weight: 900;
+    }
+  }
+  .wpcf7-form {
+    display: block;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(228, 229, 230, .9);
+    .x {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 40px;
+      color: white;
+      line-height: 30px;
+    }
+    .x:hover {
+      cursor: pointer;
+    }
+  }
+}
+#wpadminbar {
+  top: 115px;
+  position: fixed;
+  @media screen and (min-width: 768px) {
+    top: 120px;
+  }
+  @media screen and (min-width: 1200px) {
+    top: 95px;
+  }
+}
+.contact-form-hide {
+  animation-name: disappear;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+.contact-form-show {
+  animation-name: appear;
+  animation-duration: .3s;
+}
+.contact-form {
+  display: none;
+}
+
+.contact-form-bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 301;
+}
+
+.success-form {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 400px;
+  background-color: #A1DFD4;
+  text-align: center;
+  /* temp */
+  z-index: 999;
+  .success-title {
+    color: white;
+    font-size: 48px;
+    margin-top: 50px;
+  }
+  .success-x {
+    position: absolute;
+    right: 10px;
+    color: white;
+    font-size: 35px;
+  }
+  .success-x:hover {
+    cursor: pointer;
+  }
+  .success-text-1,
+  .success-text-2 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .success-text-1 {
+    margin-top: 20px;
+  }
+  .success-text-2 {
+    margin-top: 70px;
+  }
+}
+
+.company-cards,
+.load-more-company-card-hide,
+.load-more-company-cards-unhide {
+  @media screen and (min-width: 500px) {
+    margin-left: 6vw;
+    margin-right: 6vw;
+  }
+}
+
+
+  .main-content {
+
+    .featured-perk {
+      height: 100vh;
+      overflow: hidden;
+      color: #FFFFFF;
+      position: relative;
+
+      .carousel-item img {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+      }
+      .featured-perk-content {
+        position: absolute;
+        text-align: center;
+        bottom: 8vh;
+        width: 100%;
+        z-index: 1;
+      }
+      .featured-perk-text {
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 27px;
+        position: relative;
+        z-index: 1;
+      }
+      .bar {
+        position: absolute;
+        bottom: 0;
+        height: 24px;
+        width: 100%;
+        background-color: #22AC9B;
+        z-index: -1;
+      }
+      .featured-perk-name {
+        font-size: 42px;
+        line-height: 42px;
+        .featured-perk-name-div {
+          width: fit-content;
+          position: relative;
+          margin: auto;
+        }
+      }
+      .featured-perk-address {
+        font-size: 14px;
+        text-align: center;
+      }
+      .gradient {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 35vh;
+        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.5));
+      }
+    }
+    .partner-perks {
+      padding: 4%;
+      .visit-site {
+        position: absolute;
+        display: flex;
+        background-color: #A1DFD4;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        height: 75px;
+        width: 80%;
+        max-width: 300px;
+        top: 40%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 2;
+        font-size: 28px;
+        opacity: 0;
+        transition: .4s;
+      }
+      .visit-site:hover {
+        text-decoration: none;
+      }
+      .card-not-logged-in:hover {
+        .visit-site {
+          opacity: 1;
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      .partner-perks-title {
+        margin-top: 5vh;
+        line-height: 36px;
+      }
+      a {
+        color: black;
+      }
+      .card:hover {
+        text-decoration: none;
+        transition-duration: .2s;
+      }
+      .card:hover .hover {
+        visibility: visible;
+        transition-duration: .5s;
+      }
+      .card:hover .discount {
+        visibility: visible;
+        top: 25%;
+        width: 100%;
+      }
+      .card:hover .address {
+        visibility: visible;
+        opacity: 1;
+        transition-duration: .3s;
+      }
+      .card:hover .company-name-text {
+        position: absolute;
+        top: 30px;
+        width: auto;
+        left: 0;
+        right: 0;
+        transition-duration: 1s;
+      }
+      .card:hover .company-name {
+        height: calc(100% + 80px);
+        transition-duration: .2s;
+        background: rgba(255, 255, 255, .6);
+      }
+      .card:hover .company-name-not-logged-in {
+        height: 80px!important;
+        background-color: #F2F2F2;;
+      }
+      .card:hover .company-name-2 {
+        z-index: 3;
+      }
+      .card:hover .company-logo {
+        opacity: .2;
+        transition-duration: .2s;
+      }
+      .hover {
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        transition-duration: .2s;
+        position: absolute;
+        bottom: 80px;
+        width: 100%;
+        height: calc(100% - 80px);
+        z-index: 3;
+      }
+      .address {
+        opacity: 0;
+        margin-left: 20px;
+        bottom: 30px;
+        transition-duration: .3s;
+        text-align: left;
+        font-size: 16px;
+      }
+      .discount {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        transition-duration: .2s;
+        z-index: 4;
+        height: 45%;
+        overflow: scroll;
+        font-size: 16px;
+        width: 100%;
+        a{
+          color: v.$turquoise;
+        }
+      }
+      .discount-code {
+        display: none;
+      }
+      .company-cards {
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .load-more-company-cards {
+        display: none;
+        overflow: hidden;
+      }
+      .load-more-company-cards-hide,
+      .load-more-company-cards-unhide {
+        display: grid;
+        overflow: hidden;
+        animation-duration: 1s;
+        padding-right: 10px;
+        padding-bottom: 0;
+        padding-left: 10px;
+
+
+        @media screen and (min-width: 600px) {
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 15px;
+          margin-top: 15px;
+          .card {
+            .company-name {
+              font-size: 17px;
+            }
+            .company-logo{
+              aspect-ratio: 4 / 3;
+            }
+          }
+
+        }
+        @media screen and (min-width: $phone-max) {
+          margin-left: 10vw;
+          margin-right: 10vw;
+        }
+        @media screen and (min-width: 1236px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: 50px;
+          margin-top: 50px;
+          margin-left: 10vw;
+          margin-right: 10vw;
+          .card {
+            .company-name {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .load-more-company-cards-hide {
+        animation-name: hideCards;
+        padding-top: 0;
+        height: var(--more-cards-height);
+        animation-fill-mode: forwards;
+      }
+      .load-more-company-cards-unhide {
+        animation-name: unhideCards;
+        padding-top: 3px;
+        height: var(--more-cards-height);
+        .more-card-shadow {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: calc(100% + 80px);
+          box-shadow: 0 0 8px 2px #d7d7d7;
+        }
+      }
+      .card {
+        transition: all .2s ease-in-out;
+        margin-bottom: 120px;
+        transition-duration: .2s;
+        transform-origin: bottom;
+        border: none!important;
+        border-radius: 0!important;
+        box-shadow: 0 0 10px lightgray;
+
+        /* makes square logo boxes that are responsive */
+        .company-logo{
+          aspect-ratio: 4/3;
+          display: flex;
+          z-index: 2;
+          overflow: hidden;
+
+          img {
+            aspect-ratio: 1 / 1;
+            margin: auto;
+            height: 100%;
+            width: auto;
+          }
+        }
+        .company-name {
+          text-align: center;
+          display: flex;
+          position: absolute;
+          bottom: -80px;
+          align-content: center;
+          height: 80px;
+          width: 100%;
+          font-size: 20px;
+          background-color: #F2F2F2;
+          padding-left: 30px;
+          padding-right: 30px;
+          transition-duration: .2s;
+          z-index: 3;
+
+          .company-name-text {
+            margin: auto;
+            transition-duration: 1s;
+          }
+        }
+        .company-name-2 {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          bottom: -80px;
+          height: 80px;
+          width: 100%;
+          background-color: #F2F2F2;
+          transition-duration: .2s;
+          z-index: 2;
+        }
+        .company-name-3 {
+          position: absolute;
+          bottom: -80px;
+          height: 80px;
+          width: 100%;
+          box-shadow: 0 0 10px lightgray;
+          z-index: -1;
+        }
+
+      }
+      .card-shadow {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: calc(100% + 80px);
+        box-shadow: 0 0 8px 2px #d7d7d7;
+      }
+      .load-more {
+        display: flex;
+        margin: 40px auto 30px auto;
+        text-align: center;
+        color: #333033;
+        justify-content: center;
+        .load-more-and-icon {
+          display: flex;
+          img {
+            margin-left: 10px;
+            width: 24px;
+          }
+          .arrow-up {
+            display: none;
+          }
+          .load-more-text {
+            flex-shrink: 0;
+          }
+        }
+        .load-more-and-icon:hover {
+          cursor: pointer;
+        }
+      }
+
+    }
+    .partner-perks {
+      @media screen and (min-width: 600px) {
+        .partner-perks-title {
+          text-align: center;
+          margin-top: 0;
+          line-height: 60px;
+          span {
+            font-size: 60px;
+          }
+        }
+        .partner-perks-text {
+          margin: 2vh 0 50px 0;
+          font-size: 20px;
+        }
+        .card:hover .discount {
+          top: 30%;
+          width: 100%;
+        }
+        .company-cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 15px;
+          .card {
+            .company-name {
+              font-size: 17px;
+            }
+            .company-logo{
+              aspect-ratio: 4 / 3;
+            }
+          }
+        }
+        .load-more {
+          margin-top: 10px;
+        }
+      }
+    }
+    .payment {
+      display: none;
+      background-color: #A1DFD4;
+      color: #FFFFFF;
+      padding-top: 10vh;
+      padding-bottom: 10vh;
+      .header-1 {
+        font-size: 51px;
+        line-height: 51px;
+      }
+      .header-2 {
+        font-size: 45px;
+        margin-top: 10vh;
+        font-weight: bold;
+        line-height: 48px;
+      }
+      .apple {
+        margin-top: 10vh;
+        img {
+          width: 238px;
+          height: 74px;
+        }
+      }
+      .google {
+        margin-top: 15px;
+        img {
+
+        }
+      }
+    }
+    .become-partner {
+      padding: 55px;
+      .become-partner-title {
+        line-height: 36px;
+        div {
+          text-align: center;
+        }
+      }
+      p {
+        margin-top: 5vh;
+      }
+      .contact-us {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        font-size: 20px;
+        width: 180px;
+        height: 45px;
+        background-color: #A1DFD4;
+        .text {
+          color: white;
+        }
+      }
+      .contact-us:hover {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .profile-card {
+        a {
+          color: #22AC9B;
+        }
+        a:hover {
+          text-decoration: none;
+        }
+        .profile-photo {
+          margin-top: 5vh;
+          margin-bottom: 20px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .profile-info {
+          font-size: 20px;
+        }
+      }
+    }
+    .mailing-list {
+      background-color: #F1F1F1;
+      text-align: center;
+      margin-top: 6vh;
+      .mailing-list-text {
+        font-size: 30px;
+        line-height: 32px;
+      }
+      .email-field {
+        margin-top: 40px;
+        input {
+          width: 80vw;
+          height: 60px;
+          border: none;
+        }
+      }
+      .sign-up {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #A1DFD4;
+        width: 160px;
+        height: 50px;
+        font-size: 19px;
+        margin: 30px auto 0 auto;
+        text-align: center;
+        color: #FFFFFF;
+        border: none;
+        .sign-up-text {
+
+        }
+      }
+      .sign-up:hover {
+        text-decoration: none;
+      }
+      .terms-privacy {
+        font-size: 21px;
+        .terms {
+          a {
+            color: #B7B7B7;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+        }
+        .privacy {
+          a {
+            color: #B7B7B7;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+/* ---------------------------------------------------------------- *PHONE ONLY* SCREEN SIZE */
+
+@media screen and (max-width: 699px) {
+  .main-content {
+    .partner-perks {
+      .partner-perks-title {
+        span {
+          font-size: 33px;
+        }
+      }
+      .partner-perks-text {
+        margin-top: 40px;
+        margin-bottom: 8vh;
+      }
+      .load-more {
+        margin-top: 0;
+      }
+    }
+    .payment {
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+    .become-partner {
+      .become-partner-title {
+      font-size: 33px;
+      }
+    }
+    .become-partner {
+      .become-partner-text {
+        margin-bottom: 75px;
+      }
+      .profiles {
+        margin-top: 50px;
+        @media screen and (min-width: 510px) {
+          margin-left: 8vw;
+          margin-right: 8vw;
+        }
+      }
+    }
+    .mailing-list {
+      .mailing-list-text {
+        padding: 10vh 10vw 0 10vw;
+      }
+    }
+    .terms-privacy {
+      .terms {
+        margin-top: 30vh;
+      }
+      .privacy {
+        margin-top: 15px;
+        padding-bottom: 8vh;
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------------- TABLET SCREEN SIZE */
+
+@media screen and (min-width: $phone-max) {
+
+  .main-content {
+    .carousel-item{
+      height: 100vh;
+    }
+  }
+
+  .contact-form-show,
+  .contact-form-hide {
+    input {
+      margin-bottom: 22px;
+    }
+    .submit {
+      input {
+        margin-top: 14px;
+      }
+    }
+    .wpcf7-form {
+      padding: 60px 60px 22px 60px;
+      .x {
+        font-size: 55px;
+        line-height: 40px;
+      }
+      .form-your-name-and-email {
+        flex-direction: row;
+        .your-name {
+          width: 45%;
+        }
+        .form-email {
+          width: 45%;
+        }
+      }
+    }
+  }
+  .main-content {
+    h2 {
+      font-size: 60px;
+    }
+    .featured-perk {
+      .featured-perk-content {
+        max-width: 50%;
+        right: 10%;
+      }
+      .featured-perk-text {
+        font-size: 34px;
+        width: auto;
+        text-align: center;
+        line-height: 1;
+        .bar {
+          height: 22px;
+        }
+      }
+      .featured-perk-name {
+        font-size: 52px;
+        line-height: 52px;
+      }
+      .featured-perk-address {
+        font-size: 19px;
+      }
+    }
+    .partner-perks {
+      .company-cards {
+        margin-left: 10vw;
+        margin-right: 10vw;
+      }
+    }
+
+  .payment {
+    padding-left: 14vw;
+    padding-right: 14vw;
+    .header-1 {
+      display: flex;
+      div {
+      font-size: 46px;
+      }
+      .made-easy {
+        margin-right: 1rem;
+      }
+    }
+    .header-2 {
+      span {
+        font-size: 72px;
+      }
+    }
+    .add-card {
+      .pay-links {
+      }
+      .header-2 {
+        .add-card-text {
+          font-size: 60px;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+  .become-partner {
+    .become-partner-title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      line-height: 60px;
+      div {
+        display: inline-block;
+        font-size: 60px;
+      }
+      .become {
+        margin-right: 16px;
+      }
+    }
+    .become-partner-text {
+      margin-top: 40px;
+    }
+    .contact-us {
+      margin-top: 40px;
+    }
+    .profiles {
+      display: flex;
+      justify-content: center;
+      .profile-card {
+        margin-left: 5px;
+        margin-right: 5px;
+        .profile-photo {
+          img {
+            max-height: 318px;
+          }
+        }
+        .profile-info {
+          .profile-role,
+          .profile-email,
+          .profile-number {
+            font-size: 18px;
+            @media screen and (min-width: 764px) {
+              font-size: 20px;
+            }
+            @media screen and (min-width: 1100px) {
+              font-size: 17px;
+            }
+            @media screen and (min-width: 1154px) {
+              font-size: 18px;
+            }
+            @media screen and (min-width: 1242px) {
+              font-size: 19px;
+            }
+            @media screen and (min-width: 1335px) {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mailing-list {
+    padding-bottom: 35px;
+    .mailing-list-text {
+      padding: 7vh 22vw 22px 22vw;
+    }
+
+    .sign-up-boxes {
+      display: flex;
+      justify-content: center;
+
+      .sign-up {
+        margin: 0;
+        width: 21vw;
+        height: 60px;
+      }
+      .email-field {
+        margin-top: 0;
+        input {
+          width: 58vw;
+        }
+      }
+    }
+    .terms-privacy {
+      display: flex;
+      justify-content: space-between;
+      margin: 70px 18vw 0 18vw;
+      .terms {
+        margin: 0;
+      }
+      .privacy {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+}
+
+/* ---------------------------------------------------------------- AWKWARD MIDDLE STAGE BETWEEN DESKTOP AND TABLET */
+
+
+@media screen and (min-width: 1236px) {
+  .contact-form-show,
+  .contact-form-hide {
+    display: flex;
+    justify-content: center;
+    top: 12vh;
+    .wpcf7-form {
+      max-width: 1100px;
+      width: 100%;
+    }
+  }
+
+
+  .main-content {
+    .carousel-item img {
+      height: auto!important;
+      width: 100vw!important;
+      overflow: hidden;
+    }
+    .carousel-item{
+      height: auto;
+    }
+    .partner-perks {
+      .partner-perks-title {
+        span {
+          font-size: 62px!important;
+        }
+      }
+      .partner-perks-text {
+        margin: 45px 16vw 50px 16vw!important;
+      }
+      .company-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+      }
+      .card {
+        margin-bottom: 80px;
+        .company-name {
+          font-size: 20px;
+        }
+      }
+      .load-more-company-cards-unhide {
+
+      }
+      .load-more {
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+
+/* ---------------------------------------------------------------- DESKTOP SCREEN SIZE */
+
+
+@media screen and (min-width: $tablet-max) {
+  .contact-form-show,
+  .contact-form-hide {
+    max-width: 926px;
+  }
+  .main-content {
+    .featured-perk {
+      height: calc(100% - 40px);
+      img {
+        left: 0;
+        width: 100%;
+      }
+      .featured-perk-content {
+        right: 8%;
+        bottom: 180px;
+        max-width: 60%;
+        .featured-perk-text {
+          line-height: 1;
+          font-size: 46px;
+        }
+        .bar {
+          display: none;
+        }
+        .new-bar {
+          display: block;
+          position: absolute;
+          top: -29px;
+          height: 26px;
+          background-color: #22AC9B;
+          z-index: -1;
+          width: 100%;
+          min-width: 500px;
+        }
+        .featured-perk-name {
+          line-height: 80px;
+          font-size: 100px;
+          text-align: center;
+        }
+        .featured-perk-address {
+          font-size: 27px;
+        }
+      }
+    }
+    .payment {
+      padding: 20vh 12vw!important;
+      .header-1 {
+        justify-content: center;
+        div {
+        font-size: 56px;
+        }
+      }
+      .add-card {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12vh;
+        .pay-links {
+          margin-right: 1.5vw;
+          .apple {
+            margin-top: 0;
+          }
+        }
+        .header-2 {
+          margin-top: 0;
+          margin-left: 1.5vw;
+          max-width: 848px;
+          .add-card-text {
+            font-size: 61px;
+          }
+        }
+      }
+    }
+    .become-partner {
+      .become-partner-title {
+        margin-top: 12vh;
+        margin-bottom: 65px;
+        h3 {
+          font-size: 60px;
+        }
+      }
+      .become-partner-text-and-profiles {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        .become-partner-text {
+          display: flex;
+          flex-direction: column;
+          flex-basis: 300px;
+          flex-grow: .3;
+          justify-content: center;
+          margin: 0!important;
+          max-width: 36vw;
+          font-size: 20px;
+          padding-bottom: 85px;
+          p {
+            margin-top: 23px;
+          }
+        }
+        .contact-us {
+          margin: 0;
+          font-size: 32px;
+          height: 70px;
+          width: 300px;
+        }
+        .profiles {
+          margin: 0 7vw 0 0!important;
+          .profile-card {
+            .profile-photo {
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+    }
+    .mailing-list {
+      .mailing-list-text {
+        font-size: 32px;
+      }
+      @media screen and (min-width: 1200px) {
+        margin-bottom: 40px;
+      }
+      .sign-up-boxes {
+        height: 65px;
+        margin-top: 10px;
+        .email-field {
+          input {
+            height: 100%;
+            max-width: 900px;
+          }
+        }
+        .sign-up {
+          height: 100%;
+          width: 210px;
+          font-size: 32px;
+        }
+      }
+      .terms-privacy {
+        justify-content: center;
+        .terms {
+          margin-right: 5vw;
+        }
+        .privacy {
+          margin-left: 5vw;
+        }
+      }
+    }
+  }
+}
