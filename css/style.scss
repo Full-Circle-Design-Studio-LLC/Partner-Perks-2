@@ -321,11 +321,19 @@ footer {
         background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.5));
       }
     }
+    @keyframes delay-pointer-events {
+      0% {
+          visibility: hidden;
+      }
+      100% {
+          visibility: visible;
+      }
+  }
     .partner-perks {
       padding: 4%;
       .visit-site {
         position: absolute;
-        display: flex;
+        display: none;
         background-color: #A1DFD4;
         align-items: center;
         justify-content: center;
@@ -347,6 +355,7 @@ footer {
       }
       .card-not-logged-in:hover {
         .visit-site {
+          animation: delay-pointer-events 1ms linear;
           opacity: 1;
         }
       }
@@ -395,6 +404,9 @@ footer {
       .card:hover .company-name-not-logged-in {
         height: 80px!important;
         background-color: #F2F2F2;;
+        .company-name-text {
+          top: unset;
+        }
       }
       .card:hover .company-name-2 {
         z-index: 3;
@@ -445,6 +457,12 @@ footer {
         position: relative;
         padding-left: 10px;
         padding-right: 10px;
+        .card:nth-child(4) {
+          display: none;
+        }
+        .card-more:nth-child(-n + 3) {
+          display: none;
+        }
       }
       .load-more-company-cards {
         display: none;
@@ -510,6 +528,11 @@ footer {
           box-shadow: 0 0 8px 2px #d7d7d7;
         }
       }
+      .card-not-logged-in {
+        .visit-site {
+          display: flex!important;
+        }
+      }
       .card {
         transition: all .2s ease-in-out;
         margin-bottom: 120px;
@@ -553,6 +576,11 @@ footer {
             transition-duration: 1s;
           }
         }
+        .company-name-not-logged-in {
+          .company-name-text {
+            position: relative;
+          }
+        }
         .company-name-2 {
           display: flex;
           align-items: center;
@@ -589,6 +617,10 @@ footer {
         justify-content: center;
         .load-more-and-icon {
           display: flex;
+          background: none;
+          border: none;
+          align-items: center;
+          outline: none;
           img {
             margin-left: 10px;
             width: 24px;
@@ -628,6 +660,7 @@ footer {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-gap: 15px;
+          margin-top: 10px;
           .card {
             .company-name {
               font-size: 17px;
@@ -635,6 +668,12 @@ footer {
             .company-logo{
               aspect-ratio: 4 / 3;
             }
+          }
+          .card:nth-child(4) {
+            display: block;
+          }
+          .card-more:nth-child(-n + 4) {
+            display: none;
           }
         }
         .load-more {
@@ -1066,6 +1105,13 @@ footer {
         grid-gap: 50px;
         margin-left: 10vw;
         margin-right: 10vw;
+        margin-top: 50px;
+        .card:nth-child(4) {
+          display: none;
+        }
+        .card-more:nth-child(4) {
+          display: block;
+        }
       }
       .card {
         margin-bottom: 80px;

@@ -105,7 +105,6 @@ if ( is_user_logged_in() ) {
   </div>
 
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/menu.js" media="(max-width: 1200px)"></script>
 
 
