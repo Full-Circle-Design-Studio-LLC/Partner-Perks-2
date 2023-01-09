@@ -276,6 +276,7 @@
       <?php
           $args = array(
               'post_type' => 'partners',
+              'posts_per_page' => -1
           );
           $the_query = new WP_Query( $args ); ?>
 
