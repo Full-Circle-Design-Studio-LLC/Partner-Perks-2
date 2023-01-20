@@ -102,7 +102,6 @@ if ( is_user_logged_in() ) {
   </div>
 
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/menu.js" media="(max-width: 1200px)"></script>
 
 
@@ -135,15 +134,4 @@ function footerExpand() {
   var element = document.getElementById("footer-expand");
   element.classList.toggle("footer-expand");
 }
-</script>
-
-<script>
-      $(document).ready(function() {
-          $("a.scrollLink").click(function(event) {
-              event.preventDefault();
-              $("html, body").animate({
-                  scrollTop: $($(this).attr("href")).offset().top
-                }, 500);
-            });
-        });
 </script>
