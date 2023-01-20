@@ -254,7 +254,7 @@
             </div>
             <div class="company-name-3"></div>
             <div class="visit-site-cover"></div>
-            <a class="visit-site" href="<?php the_field('site_link'); ?>"><span class="bold">VISIT&nbsp</span>SITE</a>
+            <a class="visit-site" href="<?php the_field('site_link'); ?>" target="_blank"><span class="bold">VISIT&nbsp</span>SITE</a>
           </div>
               <?php endwhile; ?>
 
