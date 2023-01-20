@@ -233,6 +233,10 @@ nav li:hover {
   background: none !important;
 }
 
+.selected-item-bar {
+  display: none;
+}
+
 .dropdown-item {
   padding-left: 0;
   display: none;
@@ -241,11 +245,20 @@ nav li:hover {
   border-left: 1px solid gray;
   float: left;
 }
+.dropdown-item .selected-item-bar {
+  position: absolute;
+  top: 10%;
+  left: -14px;
+  width: 5px;
+  height: 80%;
+  background-color: #F26524;
+}
 .dropdown-item ul {
   border-left: 1px solid gray;
   float: left;
 }
 .dropdown-item li {
+  position: relative;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 10px;
@@ -339,11 +352,11 @@ nav li:hover {
   #nav ul {
     height: 100%;
   }
-  #nav .nav-item-1:hover, #nav .nav-item-2:hover, #nav .nav-item-3:hover {
+  #nav .nav-item-1:hover, #nav .nav-item-2:hover, #nav .nav-item-3:hover, #nav .nav-item-5:hover {
     font-weight: bold;
     float: left;
   }
-  #nav .nav-item-1:hover .dropdown-item, #nav .nav-item-2:hover .dropdown-item, #nav .nav-item-3:hover .dropdown-item {
+  #nav .nav-item-1:hover .dropdown-item, #nav .nav-item-2:hover .dropdown-item, #nav .nav-item-3:hover .dropdown-item, #nav .nav-item-5:hover .dropdown-item {
     opacity: 1;
     display: block;
     padding: 0;
@@ -352,7 +365,7 @@ nav li:hover {
     animation-duration: 0.5s;
     overflow: hidden;
   }
-  #nav .nav-item-1:hover li, #nav .nav-item-2:hover li, #nav .nav-item-3:hover li {
+  #nav .nav-item-1:hover li, #nav .nav-item-2:hover li, #nav .nav-item-3:hover li, #nav .nav-item-5:hover li {
     animation-name: slide-right-2 !important;
     animation-duration: 0.85s !important;
     border-left: 1px solid lightgray;
@@ -431,6 +444,9 @@ nav li:hover {
     border-top: 5px solid #00AC98;
     padding-top: 7.5px !important;
     border-bottom: 0;
+  }
+  .nav-item-1 li:nth-child(2) .selected-item-bar {
+    display: block;
   }
   /* close lease */
   /* BUILD-ACTIVE */
@@ -521,8 +537,8 @@ nav li:hover {
     text-decoration: none;
   }
   .secondary-nav li:hover {
-    border: 1px solid #F26524;
-    background-color: #F26524;
+    border: 1px solid #00AC98;
+    background-color: #00AC98;
   }
   .secondary-nav li:hover a {
     color: white;
@@ -1131,6 +1147,10 @@ section {
 }
 
 /* close mixitup */
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
 #employee li {
   color: #333033;
   text-decoration: none;

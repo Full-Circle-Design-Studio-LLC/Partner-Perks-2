@@ -283,6 +283,10 @@ text-decoration: none;
   background: none!important;
 }
 
+.selected-item-bar {
+  display: none;
+}
+
 .dropdown-item{
   padding-left: 0;
   display: none;
@@ -290,11 +294,20 @@ text-decoration: none;
   opacity: 0;
   border-left: 1px solid gray;
   float: left;
+  .selected-item-bar {
+    position: absolute;
+    top: 10%;
+    left: -14px;
+    width: 5px;
+    height: 80%;
+    background-color: #F26524;
+  }
   ul{
     border-left: 1px solid gray;
     float: left;
   }
   li{
+    position: relative;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 10px;
@@ -398,7 +411,7 @@ ul{
 height: 100%;
 }
 
-.nav-item-1:hover, .nav-item-2:hover, .nav-item-3:hover{
+.nav-item-1:hover, .nav-item-2:hover, .nav-item-3:hover, .nav-item-5:hover{
   font-weight: bold;
   float: left;
 
@@ -508,6 +521,13 @@ border-top: 5px solid v.$turquoise;
 padding-top: 7.5px!important;
 border-bottom: 0;
 }
+}
+.nav-item-1 {
+  li:nth-child(2) {
+    .selected-item-bar {
+      display: block;
+    }
+  }
 }
 /* close lease */
 
@@ -620,8 +640,8 @@ color: v.$black;
 text-decoration: none;
   }
   li:hover{
-    border: 1px solid v.$orange;
-    background-color: v.$orange;
+    border: 1px solid v.$turquoise;
+    background-color: v.$turquoise;
     a{
     color: white;
   }
@@ -1380,6 +1400,9 @@ overflow: hidden;
 
 //FOOTER -----------------------------------------------------------------
 
+.cursor-pointer:hover {
+  cursor: pointer;
+}
 #employee{
   li{
     color: v.$black;

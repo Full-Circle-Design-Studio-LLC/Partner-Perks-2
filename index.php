@@ -325,7 +325,7 @@
   </div>
 </div> <!-- END ACCORDION -->
 
-      <!-- START LOAD MORE BUTTON -->
+      <!-- START LOAD MORE BUTTON (OLD) -->
 
       <div class="load-more d-none">
         <div class="load-more-and-icon" onclick="loadMore()">
@@ -336,8 +336,6 @@
       </div>
 
       <!-- END LOAD MORE BUTTON -->
-
-      
 
   </div>
 
