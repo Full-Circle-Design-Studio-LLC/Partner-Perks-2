@@ -233,6 +233,10 @@ nav li:hover {
   background: none !important;
 }
 
+.selected-item-bar {
+  display: none;
+}
+
 .dropdown-item {
   padding-left: 0;
   display: none;
@@ -241,11 +245,20 @@ nav li:hover {
   border-left: 1px solid gray;
   float: left;
 }
+.dropdown-item .selected-item-bar {
+  position: absolute;
+  top: 10%;
+  left: -14px;
+  width: 5px;
+  height: 80%;
+  background-color: #F26524;
+}
 .dropdown-item ul {
   border-left: 1px solid gray;
   float: left;
 }
 .dropdown-item li {
+  position: relative;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 10px;
@@ -339,11 +352,11 @@ nav li:hover {
   #nav ul {
     height: 100%;
   }
-  #nav .nav-item-1:hover, #nav .nav-item-2:hover, #nav .nav-item-3:hover {
+  #nav .nav-item-1:hover, #nav .nav-item-2:hover, #nav .nav-item-3:hover, #nav .nav-item-5:hover {
     font-weight: bold;
     float: left;
   }
-  #nav .nav-item-1:hover .dropdown-item, #nav .nav-item-2:hover .dropdown-item, #nav .nav-item-3:hover .dropdown-item {
+  #nav .nav-item-1:hover .dropdown-item, #nav .nav-item-2:hover .dropdown-item, #nav .nav-item-3:hover .dropdown-item, #nav .nav-item-5:hover .dropdown-item {
     opacity: 1;
     display: block;
     padding: 0;
@@ -352,7 +365,7 @@ nav li:hover {
     animation-duration: 0.5s;
     overflow: hidden;
   }
-  #nav .nav-item-1:hover li, #nav .nav-item-2:hover li, #nav .nav-item-3:hover li {
+  #nav .nav-item-1:hover li, #nav .nav-item-2:hover li, #nav .nav-item-3:hover li, #nav .nav-item-5:hover li {
     animation-name: slide-right-2 !important;
     animation-duration: 0.85s !important;
     border-left: 1px solid lightgray;
@@ -431,6 +444,9 @@ nav li:hover {
     border-top: 5px solid #00AC98;
     padding-top: 7.5px !important;
     border-bottom: 0;
+  }
+  .nav-item-1 li:nth-child(2) .selected-item-bar {
+    display: block;
   }
   /* close lease */
   /* BUILD-ACTIVE */
@@ -521,8 +537,8 @@ nav li:hover {
     text-decoration: none;
   }
   .secondary-nav li:hover {
-    border: 1px solid #F26524;
-    background-color: #F26524;
+    border: 1px solid #00AC98;
+    background-color: #00AC98;
   }
   .secondary-nav li:hover a {
     color: white;
@@ -1131,6 +1147,10 @@ section {
 }
 
 /* close mixitup */
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
 #employee li {
   color: #333033;
   text-decoration: none;
@@ -2481,12 +2501,20 @@ footer ul {
   height: 35vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
+@keyframes delay-pointer-events {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
 .main-content .partner-perks {
   padding: 4%;
 }
 .main-content .partner-perks .visit-site {
   position: absolute;
-  display: flex;
+  display: none;
   background-color: #A1DFD4;
   align-items: center;
   justify-content: center;
@@ -2507,6 +2535,7 @@ footer ul {
   text-decoration: none;
 }
 .main-content .partner-perks .card-not-logged-in:hover .visit-site {
+  animation: delay-pointer-events 1ms linear;
   opacity: 1;
 }
 .main-content .partner-perks ul {
@@ -2554,6 +2583,9 @@ footer ul {
 .main-content .partner-perks .card:hover .company-name-not-logged-in {
   height: 80px !important;
   background-color: #F2F2F2;
+}
+.main-content .partner-perks .card:hover .company-name-not-logged-in .company-name-text {
+  top: unset;
 }
 .main-content .partner-perks .card:hover .company-name-2 {
   z-index: 3;
@@ -2604,6 +2636,12 @@ footer ul {
   position: relative;
   padding-left: 10px;
   padding-right: 10px;
+}
+.main-content .partner-perks .company-cards .card:nth-child(4) {
+  display: none;
+}
+.main-content .partner-perks .company-cards .card-more:nth-child(-n+3) {
+  display: none;
 }
 .main-content .partner-perks .load-more-company-cards {
   display: none;
@@ -2674,6 +2712,9 @@ footer ul {
   height: calc(100% + 80px);
   box-shadow: 0 0 8px 2px #d7d7d7;
 }
+.main-content .partner-perks .card-not-logged-in .visit-site {
+  display: flex !important;
+}
 .main-content .partner-perks .card {
   transition: all 0.2s ease-in-out;
   margin-bottom: 120px;
@@ -2715,6 +2756,9 @@ footer ul {
   margin: auto;
   transition-duration: 1s;
 }
+.main-content .partner-perks .card .company-name-not-logged-in .company-name-text {
+  position: relative;
+}
 .main-content .partner-perks .card .company-name-2 {
   display: flex;
   align-items: center;
@@ -2750,6 +2794,10 @@ footer ul {
 }
 .main-content .partner-perks .load-more .load-more-and-icon {
   display: flex;
+  background: none;
+  border: none;
+  align-items: center;
+  outline: none;
 }
 .main-content .partner-perks .load-more .load-more-and-icon img {
   margin-left: 10px;
@@ -2785,12 +2833,19 @@ footer ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
+    margin-top: 10px;
   }
   .main-content .partner-perks .company-cards .card .company-name {
     font-size: 17px;
   }
   .main-content .partner-perks .company-cards .card .company-logo {
     aspect-ratio: 4/3;
+  }
+  .main-content .partner-perks .company-cards .card:nth-child(4) {
+    display: block;
+  }
+  .main-content .partner-perks .company-cards .card-more:nth-child(-n+4) {
+    display: none;
   }
   .main-content .partner-perks .load-more {
     margin-top: 10px;
@@ -3164,14 +3219,6 @@ footer ul {
     max-width: 1100px;
     width: 100%;
   }
-  .main-content .carousel-item img {
-    height: auto !important;
-    width: 100vw !important;
-    overflow: hidden;
-  }
-  .main-content .carousel-item {
-    height: auto;
-  }
   .main-content .partner-perks .partner-perks-title span {
     font-size: 62px !important;
   }
@@ -3184,6 +3231,13 @@ footer ul {
     grid-gap: 50px;
     margin-left: 10vw;
     margin-right: 10vw;
+    margin-top: 50px;
+  }
+  .main-content .partner-perks .company-cards .card:nth-child(4) {
+    display: none;
+  }
+  .main-content .partner-perks .company-cards .card-more:nth-child(4) {
+    display: block;
   }
   .main-content .partner-perks .card {
     margin-bottom: 80px;
@@ -3317,15 +3371,15 @@ footer ul {
 }
 @media screen and (min-width: 1100px) {
   .main-content .mailing-list .sign-up-boxes {
-    height: 65px;
+    height: 55px;
     margin-top: 10px;
   }
   .main-content .mailing-list .sign-up-boxes .email-field input {
-    height: 100%;
+    height: 55px;
     max-width: 900px;
   }
   .main-content .mailing-list .sign-up-boxes .sign-up {
-    height: 100%;
+    height: 55px;
     width: 210px;
     font-size: 32px;
   }

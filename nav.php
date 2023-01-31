@@ -1,13 +1,13 @@
 <!-- NAV -->
-      <nav class="col-12 col-xl-10 offset-xl-3" id="nav">
+<nav class="col-12 col-xl-10 offset-xl-3" id="nav">
         <ul class="main-nav col-8 col-md-5 col-lg-8 col-xl-6 offset-2 offset-md-4 offset-lg-4 offset-xl-1">
 
           <li class="nav-item-1" id="leaseParent"><a onclick="dropdownItem(), dropdownLeaseActive()" class="d-xl-none">LEASE</a>
-            <span class="d-none d-xl-block">LEASE</span>
+            <a class="d-none d-xl-block" href="https://www.burnsscalorealestate.com/agency-brokerage">LEASE</a>
 <ul class="dropdown-item item-1" id="subItem-l">
 
-<li><a href="https://www.burnsscalorealestate.com/agency-brokerage/"><p>BROKERAGE</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow0.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
-<li><a href="https://www.burnsscalorealestate.com/listings-agency-brokerage/"><p>AVAILABLE PROPERTIES</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow0.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
+<li><div class="selected-item-bar"></div><a href="https://www.burnsscalorealestate.com/agency-brokerage/"><p>BROKERAGE</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
+<li><div class="selected-item-bar"></div><a href="https://www.burnsscalorealestate.com/listings-agency-brokerage/"><p>AVAILABLE PROPERTIES</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
 
 </ul>
 </li>
@@ -19,12 +19,12 @@
 
 <li class="nav-item-2" id="buildParent"><a onclick="dropdownItem2(), dropdownBuildActive()" class="d-xl-none">BUILD</a>
 
-<span class="d-none d-xl-block">BUILD</span>
+<a href="https://www.burnsscalorealestate.com/construction" class="d-none d-xl-block">BUILD</a>
 <ul class="dropdown-item item-1" id="subItem-b">
 
 
-<li><a href="https://www.burnsscalorealestate.com/construction/"><p>CONSTRUCTION</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow0.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
-<li><a href="https://www.burnsscalorealestate.com/investment-management/"><p>INVESTMENT MANAGEMENT</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow0.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
+<li><div class="selected-item-bar"></div><a href="https://www.burnsscalorealestate.com/construction/"><p>CONSTRUCTION</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
+<li><div class="selected-item-bar"></div><a href="https://www.burnsscalorealestate.com/investment-management/"><p>INVESTMENT MANAGEMENT</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
 
 </ul>
 </li>
@@ -33,13 +33,12 @@
 
 <!-- MANAGE -->
 
-<li class="nav-item-3" id="manageParent"><a onclick="dropdownItem3(), dropdownLeaseActive()" class="d-xl-none">MANAGE</a>
-<span class="d-none d-xl-block">MANAGE</span>
+<li class="nav-item-3" id="manageParent"><a href="https://www.burnsscalorealestate.com/property-management/" class="">MANAGE</a>
 
-<ul class="dropdown-item item-1" id="subItem-m">
+<ul class="dropdown-item item-1 d-none" id="subItem-m">
 
-  <li><a href="https://www.burnsscalorealestate.com/client-experience/"><p>CLIENT EXPERIENCE</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow0.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
-  <li><a href="https://www.burnsscalorealestate.com/property-management/"><p>PROPERTY MANAGEMENT</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow0.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
+  <li><a href="https://www.burnsscalorealestate.com/client-experience/"><p>CLIENT EXPERIENCE</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
+  <li><a href="https://www.burnsscalorealestate.com/property-management/"><p>PROPERTY MANAGEMENT</p><img src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg" alt="arrow indicating link" class="d-none d-xl-block"></a></li>
 </ul>
 
 </li>
@@ -54,7 +53,6 @@
             <li class="nav-item-6 d-none"><a href="<?php get_site_url(); ?>/schedule-a-tour/">SCHEDULE A TOUR</a></li>
             <li class="nav-item-7"><a href="https://www.burnsscalorealestate.com/listings-agency-brokerage/">AVAILABLE PROPERTIES</a></li>
           </ul>
-
 
 
           </nav>

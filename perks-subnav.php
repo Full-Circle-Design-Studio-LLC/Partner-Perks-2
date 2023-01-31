@@ -8,7 +8,7 @@
     <style>
       .subnav-profile-icon-img,
       .login,
-      .sign-up {
+      .subnav-sign-up {
         display: none!important;
       }
       .hello-user {
@@ -20,7 +20,7 @@
   <div class="subnav-login">
     <img onclick="slideLogin()" class="subnav-profile-icon-img" src="<?php echo get_template_directory_uri(); ?>/assets/Subtraction1.svg">
     <a class="login" href="<?php echo get_site_url() ?>/wp-login.php">Login</a>
-    <a class="sign-up" href="<?php echo get_site_url() ?>/register">Sign Up</a>
+    <a class="sign-up subnav-sign-up" href="<?php echo get_site_url() ?>/register">Sign Up</a>
   </div>
 
   <?php global $current_user; wp_get_current_user(); ?>

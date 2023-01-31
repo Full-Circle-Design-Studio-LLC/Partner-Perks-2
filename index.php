@@ -1,3 +1,4 @@
+<?php /* Template Name: Home */ ?>
 <?php get_header() ?>
       </header>
       <?php get_template_part('nav'); ?>
@@ -41,6 +42,17 @@
 
 <div class="main-content">
 
+        
+        <div class="test">
+        <?php
+          $featuredPerks = get_field('featured_perks');
+          echo 'id: ';
+          $featuredPerk_1 = $featuredPerks[0];
+          $featuredPerk_2 = $featuredPerks[1];
+          $featuredPerk_3 = $featuredPerks[2];
+        ?>
+        </div>
+
   <!-- START CAROUSEL -->
 
   <div id="carouselExampleControls" class="carousel slide featured-perk" data-ride="carousel">
@@ -50,7 +62,7 @@
       <?php
           $args = array(
               'post_type' => 'partners',
-              'category_name' => 'feature-1',
+              'p' => intval($featuredPerk_1)
           );
           $the_query = new WP_Query( $args ); ?>
 
@@ -95,8 +107,8 @@
 
       <?php
           $args = array(
-              'post_type' => 'partners',
-              'category_name' => 'feature-2',
+            'post_type' => 'partners',
+            'p' => intval($featuredPerk_2)
           );
           $the_query = new WP_Query( $args ); ?>
 
@@ -141,8 +153,8 @@
 
       <?php
           $args = array(
-              'post_type' => 'partners',
-              'category_name' => 'feature-3',
+            'post_type' => 'partners',
+            'p' => intval($featuredPerk_3)
           );
           $the_query = new WP_Query( $args ); ?>
 
@@ -212,15 +224,13 @@
       <?php
           $args = array(
               'post_type' => 'partners',
-              'tag' => 'sub-featured'
+              'posts_per_page' => '4'
           );
           $the_query = new WP_Query( $args ); ?>
 
           <?php if ( $the_query->have_posts() ) : ?>
 
               <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-
           <!-- CONTENT GOES HERE -->
 
           <div class="card <?php echo 'card-'.$notLoggedInCustomClass; ?>">
@@ -243,11 +253,9 @@
               <div class="address"><?php the_field('address'); ?></div>
             </div>
             <div class="company-name-3"></div>
-            <a class="visit-site" href="<?php the_field('site_link'); ?>"><span class="bold">VISIT&nbsp</span>SITE</a>
+            <div class="visit-site-cover"></div>
+            <a class="visit-site" href="<?php the_field('site_link'); ?>" target="_blank"><span class="bold">VISIT&nbsp</span>SITE</a>
           </div>
-
-
-
               <?php endwhile; ?>
 
       <?php wp_reset_postdata(); ?>
@@ -256,62 +264,70 @@
 
       <!-- END COMPANY CARD LOOP -->
 
+      
+
       </div>
 
-        <div id="more-cards" class="load-more-company-cards">
+      <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body company-cards">
+      <?php
+          $args = array(
+              'post_type' => 'partners',
+              'posts_per_page' => -1
+          );
+          $the_query = new WP_Query( $args ); ?>
 
-        <!-- START *LOAD MORE* COMPANY CARD LOOP -->
+          <?php if ( $the_query->have_posts() ) : ?>
 
-        <?php
-            $args = array(
-                'post_type' => 'partners',
-                'tag' => 'sub-sub-featured'
-            );
-            $the_query = new WP_Query( $args ); ?>
+              <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+          <!-- CONTENT GOES HERE -->
 
-            <?php if ( $the_query->have_posts() ) : ?>
-
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-
-        <!-- CONTENT GOES HERE -->
-
-            <div class="card">
-              <div class="company-logo">
-                <?php the_post_thumbnail(); ?>
-                <div class="hover">
-                </div>
+          <div class="card card-more <?php echo 'card-'.$notLoggedInCustomClass; ?>">
+            <div class="company-logo">
+              <?php the_post_thumbnail(); ?>
+              <div class="hover">
               </div>
-              <div class="company-name">
-
-                <div class="company-name-text bold"><?php the_title(); ?></div>
-                <div class="discount">
-                  <div><?php the_field('discountincentive'); ?></div>
-                  <div class="discount-code"><?php the_field('discountcode'); ?></div>
-                </div>
-
-
-              </div>
-
-              <div class="company-name-2">
-                <div class="address"><?php the_field('address'); ?></div>
-              </div>
-              <div class="company-name-3"></div>
             </div>
+            <div class="company-name <?php echo 'company-name-'.$notLoggedInCustomClass; ?>">
 
-                <?php endwhile; ?>
+              <div class="company-name-text bold"><?php the_title(); ?></div>
+              <div class="discount <?php echo $hideIfNotLoggedIn; ?>">
+                <div><?php the_field('discountincentive'); ?></div>
+                <div class="discount-code"><?php the_field('discountcode'); ?></div>
+              </div>
 
-        <?php wp_reset_postdata(); ?>
 
-        <?php endif; ?>
+            </div>
+            <div class="company-name-2 <?php echo $hideIfNotLoggedIn; ?>">
+              <div class="address"><?php the_field('address'); ?></div>
+            </div>
+            <div class="company-name-3"></div>
+            <div class="visit-site-cover"></div>
+            <a class="visit-site" href="<?php the_field('site_link'); ?>" target="_blank"><span class="bold">VISIT&nbsp</span>SITE</a>
+          </div>
+              <?php endwhile; ?>
 
-        <!-- END *LOAD MORE* COMPANY CARD LOOP -->
+      <?php wp_reset_postdata(); ?>
 
-        </div>
+      <?php endif; ?>
+      </div>
+    </div>
+    <div class="load-more" onclick="loadMore()">
+      <button class="accordion-button load-more-and-icon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <span id="load-more-span" class="load-more-text">LOAD MORE</span>
+        <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?">
+        <img class="arrow-up" id="arrow-up" src="<?php echo get_template_directory_uri(); ?>/assets/arrow-up.svg?">
+      </button>
+    </div>
+  </div>
+</div> <!-- END ACCORDION -->
 
-      <!-- START LOAD MORE BUTTON -->
+      <!-- START LOAD MORE BUTTON (OLD) -->
 
-      <div class="load-more">
+      <div class="load-more d-none">
         <div class="load-more-and-icon" onclick="loadMore()">
           <span id="load-more-span" class="load-more-text">LOAD MORE</span>
           <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?">
