@@ -797,14 +797,6 @@ footer {
       }
       .terms-privacy {
         font-size: 21px;
-        .terms {
-          a {
-            color: #B7B7B7;
-          }
-          a:hover {
-            text-decoration: none;
-          }
-        }
         .privacy {
           a {
             color: #B7B7B7;
@@ -862,12 +854,9 @@ footer {
       }
     }
     .terms-privacy {
-      .terms {
-        margin-top: 30vh;
-      }
       .privacy {
-        margin-top: 15px;
-        padding-bottom: 8vh;
+        margin-top: 75px;
+        padding-bottom: 25px;
       }
     }
   }
@@ -1051,11 +1040,8 @@ footer {
     }
     .terms-privacy {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       margin: 70px 18vw 0 18vw;
-      .terms {
-        margin: 0;
-      }
       .privacy {
         margin: 0;
         padding: 0;
@@ -1264,12 +1250,6 @@ footer {
       }
       .terms-privacy {
         justify-content: center;
-        .terms {
-          margin-right: 5vw;
-        }
-        .privacy {
-          margin-left: 5vw;
-        }
       }
     }
   }

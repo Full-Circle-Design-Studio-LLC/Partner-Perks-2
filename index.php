@@ -466,11 +466,8 @@
 <!-- END TEMP -->
 
     <div class="terms-privacy">
-      <div class="terms">
-        <a href="#">TERMS AND CONDITIONS</a>
-      </div>
       <div class="privacy">
-        <a href="#">PRIVACY POLICY</a>
+        <a href="https://www.burnsscalorealestate.com/privacy-policy/" target="_blank">PRIVACY POLICY</a>
       </div>
     </div>
   </div>

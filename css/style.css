@@ -2960,12 +2960,6 @@ footer ul {
 .main-content .mailing-list .terms-privacy {
   font-size: 21px;
 }
-.main-content .mailing-list .terms-privacy .terms a {
-  color: #B7B7B7;
-}
-.main-content .mailing-list .terms-privacy .terms a:hover {
-  text-decoration: none;
-}
 .main-content .mailing-list .terms-privacy .privacy a {
   color: #B7B7B7;
 }
@@ -3011,12 +3005,9 @@ footer ul {
   }
 }
 @media screen and (max-width: 699px) {
-  .main-content .terms-privacy .terms {
-    margin-top: 30vh;
-  }
   .main-content .terms-privacy .privacy {
-    margin-top: 15px;
-    padding-bottom: 8vh;
+    margin-top: 75px;
+    padding-bottom: 25px;
   }
 }
 /* ---------------------------------------------------------------- TABLET SCREEN SIZE */
@@ -3195,11 +3186,8 @@ footer ul {
   }
   .main-content .mailing-list .terms-privacy {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 70px 18vw 0 18vw;
-  }
-  .main-content .mailing-list .terms-privacy .terms {
-    margin: 0;
   }
   .main-content .mailing-list .terms-privacy .privacy {
     margin: 0;
@@ -3387,12 +3375,6 @@ footer ul {
 @media screen and (min-width: 1100px) {
   .main-content .mailing-list .terms-privacy {
     justify-content: center;
-  }
-  .main-content .mailing-list .terms-privacy .terms {
-    margin-right: 5vw;
-  }
-  .main-content .mailing-list .terms-privacy .privacy {
-    margin-left: 5vw;
   }
 }
 
