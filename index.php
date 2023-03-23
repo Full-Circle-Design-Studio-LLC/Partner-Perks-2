@@ -397,23 +397,11 @@
 
       <div class="profiles">
 
-      <!-- START PROFILE CARD LOOP -->
-
-      <?php
-          $args = array(
-              'post_type' => 'profiles'
-          );
-          $the_query = new WP_Query( $args ); ?>
-
-          <?php if ( $the_query->have_posts() ) : ?>
-
-              <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-
       <!-- CONTENT GOES HERE -->
       <div class="profile-card">
         <div class="profile-photo">
-          <?php the_post_thumbnail(); ?>
+          <?php $photo = get_field('photo'); ?>
+          <img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>">
         </div>
 
         <div class="profile-info">
@@ -423,14 +411,6 @@
           <div class="profile-number"><a href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a></div>
         </div>
       </div>
-
-              <?php endwhile; ?>
-
-      <?php wp_reset_postdata(); ?>
-
-      <?php endif; ?>
-
-      <!-- END PROFILE CARD LOOP -->
 
       </div>
     </div>
