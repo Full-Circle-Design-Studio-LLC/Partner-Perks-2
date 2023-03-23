@@ -397,7 +397,6 @@
 
       <div class="profiles">
 
-      <!-- CONTENT GOES HERE -->
       <div class="profile-card">
         <div class="profile-photo">
           <?php $photo = get_field('photo'); ?>
@@ -411,6 +410,22 @@
           <div class="profile-number"><a href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a></div>
         </div>
       </div>
+
+      <?php if (get_field('show_second_contact') == 'Show') : ?>
+      <div class="profile-card">
+        <div class="profile-photo">
+          <?php $photo = get_field('photo_2'); ?>
+          <img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>">
+        </div>
+
+        <div class="profile-info">
+          <div class="profile-name"><span class="bold"><?php the_field('first_name_2'); ?> </span><?php the_field('last_name_2'); ?></div>
+          <div class="profile-role"><?php the_field('position_2'); ?></div>
+          <div class="profile-email"><a href="mailto:<?php the_field('email_2'); ?>"><?php the_field('email_2'); ?></a></div>
+          <div class="profile-number"><a href="tel:<?php the_field('phone_2'); ?>"><?php the_field('phone_2'); ?></a></div>
+        </div>
+      </div>
+      <?php endif; ?>
 
       </div>
     </div>
