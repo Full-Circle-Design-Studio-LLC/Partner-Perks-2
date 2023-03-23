@@ -209,12 +209,12 @@
 
   <!-- START PARTNER PERKS SECTION -->
 
-  <div class="partner-perks">
+  <div class="partner-perks col-12 float-left pt-5 pb-5 pl-md-5 pr-md-5">
     <div class="partner-perks-title">
       <span><span class="bold">PARTNER</span> PERKS</span>
     </div>
     <div class="partner-perks-text">
-      <p>At Burns Scalo Real Estate, we keep amenities and community in mind behind every build. With our Partner Perks program, this now extends well beyond our properties. All Burns Scalo tenants and employees can enjoy endless benefits, rewards, and discounts right at their fingertips.</p>
+      <?php the_content(); ?>
     </div>
 
     <div class="company-cards">
@@ -345,14 +345,14 @@
 
 
 
-  <div class="payment">
+  <div class="payment col-12 float-left pt-5 pb-5 pl-md-5 pr-md-5">
     <div class="header-1">
       <div class="made-easy bold">MADE EASY</div>
       <div>ON THE GO</div>
     </div>
     <div class="add-card">
       <div class="header-2">
-        <span class="bold add-card-text">ADD THE E-CARD TO YOUR PHONE WALLET</span>
+        <span class="bold add-card-text"><?php the_field('e_card_section_text'); ?></span>
       </div>
       <div class="pay-links">
         <div class="apple d-none"><a href="#">
@@ -362,9 +362,14 @@
           <img src="<?php echo get_template_directory_uri(); ?>/assets/google.png" alt="#">
         </a></div>
 
-        <div class="google"><a href="<?php echo get_template_directory_uri(); ?>/assets/partner-perks-card.jpg" download="Partner Perks Card">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/add-to-photos.png" alt="#" style="width: 350px; height:auto;">
-        </a></div>
+        <a class="card-download-button" href="<?php echo get_template_directory_uri(); ?>/assets/partner-perks-card.jpg" download="Partner Perks Card">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/download-icon.svg" alt="#">
+            <div>
+              <span class="download-button__line-1 bold"><?php the_field('e_card_button_text_line_1'); ?></span>
+              <br>
+              <span class="download-button__line-2"><?php the_field('e_card_button_text_line_2'); ?></span>
+            </div>
+        </a>
 
       </div>
     </div>
@@ -374,16 +379,15 @@
 
   <!-- START BECOME PARTNER SECTION -->
 
-  <div class="become-partner">
+  <div class="become-partner col-12 float-left pt-5 pb-5 pl-md-5 pr-md-5">
     <div class="become-partner-title">
       <div class="become bold">BECOME</div>
       <div>A PARTNER</div>
     </div>
     <div class="become-partner-text-and-profiles">
       <div class="become-partner-text-and-contact-us">
-        <div class="become-partner-text">
-          <p>Is your business looking to join? Partner Perks is free to participate, all we ask is that you honor your exclusive discount to Burns Scalo tenants and employees who make a purchase.</p>
-          <p>Contact Our Client Experience Team Today</p>
+        <div class="become-partner-text mb-5">
+          <?php the_field('contact_section_text'); ?>
         </div>
 
         <div class="contact-us" onclick="contactUs()">
@@ -436,34 +440,13 @@
 
   <!-- START MAILING LIST SECTION -->
 
-  <div class="mailing-list">
+  <div class="mailing-list col-12 float-left pt-5">
     <div class="mailing-list-text">
-      <span>JOIN OUR MAILING LIST FOR FEATURED PERK UPDATES!</span>
+      <span><?php the_field('mailing_list_text'); ?></span>
     </div>
 
 
     <?php echo do_shortcode('[contact-form-7 id="36" title="Mailing List"]'); ?>
-<!--
-
-    <div class="sign-up-boxes">
-
-
-        <form class="email-field" action="welcome_get.php" method="get">
-        <input type="text" name="email">
-        </form>
-      <a href ="#" class="sign-up">
-        <div class="sign-up-text"><span class="bold">SIGN</span> UP</div>
-      </a>
-    </div>
-  -->
-
-
-<!-- TEMP -->
-
-<div>
-</div>
-
-<!-- END TEMP -->
 
     <div class="terms-privacy">
       <div class="privacy">

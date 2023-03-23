@@ -82,58 +82,8 @@ window.addEventListener("resize", function(event) {
 // 		document.querySelector(".load-more").style.display = "none";
 // }
 
-function setHeight() {
-  // cardHeight = document.querySelector(".card").offsetHeight; // gets height of card (cannot use style.height as it is not hardcoded into css)
-  // cardHeightPlusMargin = cardHeight + 120;
-  screenWidth = window.innerWidth; // used to find how many rows there will be
-
-  // if (screenWidth >= 1236) /* 3 cards per row */ {
-  //   if (cardList.length > 0 && cardList.length < 4) {
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("1-3 cards, desktop");
-  //   } else if (cardList.length > 3) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*2;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("3+ cards, desktop");
-  //   }
-  // } else if (screenWidth >= 600) /* 2 cards per row */ {
-  //   if (cardList.length > 0 && cardList.length < 3) {
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("1-3 cards, tablet");
-  //   } else if (cardList.length > 2 && cardList.length < 5) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*2;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("3-4 cards, tablet");
-  //   } else if (cardList.length > 4) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*3;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("4+ cards, tablet");
-  //   }
-  // } else {
-  //   if (cardList.length === 1) {
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("1 card, mobile");
-  //   } else if (cardList.length === 2) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*2;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("2 cards, mobile");
-  //   } else if (cardList.length === 3) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*3;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("3 cards, mobile");
-  //   } else if (cardList.length === 4) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*4;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("4 cards, mobile");
-  //   } else if (cardList.length === 5) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*5;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("5 cards, mobile");
-  //   } else if (cardList.length === 6) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*6;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("6 cards, mobile");
-  //   }
+  function setHeight() {
+    screenWidth = window.innerWidth;
   }
 
   // for setting featured partner bar length when company name is too short
@@ -243,38 +193,4 @@ function slideLoginCancel() {
   login.classList.remove("slide-back-small");
 
   counter = 0;
-
-  /*
-  if (scrnWidth < 540) {
-    if (login.classList.contains("animate-login")) {
-      login.classList.remove("animate-login");
-      login.classList.add("animate-login-small");
-    } else if (login.classList.contains("slide-back")) {
-      login.classList.remove("slide-back");
-      login.classList.add("slide-back-small");
-    }
-
-
-  } else {
-    if (login.classList.contains("animate-login-small")) {
-      login.classList.remove("animate-login-small");
-      login.style.animationDuration = "0s";
-      login.classList.add("animate-login");
-      login.style.animationDuration = ".7s";
-    } else if (login.classList.contains("slide-back-small")) {
-      login.classList.remove("slide-back-small");
-      login.style.animationDuration = "0s";
-      login.classList.add("slide-back");
-      login.style.animationDuration = ".7s";
-    }
-
-  }
-  if (login.classList.contains("animate-login-small")) {
-    login.classList.toggle("animate-login-small");
-    login.classList.add("slide-back-small");
-  } else if (login.classList.contains("animate-login")) {
-    login.classList.toggle("animate-login");
-    login.classList.add("slide-back");
-  }
-  */
 }

@@ -330,7 +330,6 @@ footer {
       }
   }
     .partner-perks {
-      padding: 4%;
       .visit-site {
         position: absolute;
         display: none;
@@ -364,7 +363,6 @@ footer {
         padding: 0;
       }
       .partner-perks-title {
-        margin-top: 5vh;
         line-height: 36px;
       }
       a {
@@ -685,8 +683,6 @@ footer {
       display: none;
       background-color: #A1DFD4;
       color: #FFFFFF;
-      padding-top: 10vh;
-      padding-bottom: 10vh;
       .header-1 {
         font-size: 51px;
         line-height: 51px;
@@ -706,13 +702,10 @@ footer {
       }
       .google {
         margin-top: 15px;
-        img {
-
-        }
       }
     }
     .become-partner {
-      padding: 55px;
+      background-color: white;
       .become-partner-title {
         line-height: 36px;
         div {
@@ -763,7 +756,6 @@ footer {
     .mailing-list {
       background-color: #F1F1F1;
       text-align: center;
-      margin-top: 6vh;
       .mailing-list-text {
         font-size: 30px;
         line-height: 32px;
@@ -827,39 +819,40 @@ footer {
         margin-top: 0;
       }
     }
-    .payment {
-    padding-left: 30px;
-    padding-right: 30px;
-    }
     .become-partner {
       .become-partner-title {
       font-size: 33px;
       }
     }
     .become-partner {
-      .become-partner-text {
-        margin-bottom: 75px;
-      }
       .profiles {
         margin-top: 50px;
-        @media screen and (min-width: 510px) {
-          margin-left: 8vw;
-          margin-right: 8vw;
-        }
-      }
-    }
-    .mailing-list {
-      .mailing-list-text {
-        padding: 10vh 10vw 0 10vw;
-      }
-    }
-    .terms-privacy {
-      .privacy {
-        margin-top: 75px;
-        padding-bottom: 25px;
       }
     }
   }
+}
+.card-download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  width: 100%;
+  max-width: 350px;
+  height: 90px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0.5));
+  font-size: 19px;
+  margin-top: 25px;
+  gap: 15px;
+
+  img {
+    width: 55px;
+  }
+}
+.card-download-button:hover {
+  text-decoration: none;
+  color: black;
 }
 
 /* ---------------------------------------------------------------- TABLET SCREEN SIZE */
@@ -933,8 +926,6 @@ footer {
     }
 
   .payment {
-    padding-left: 14vw;
-    padding-right: 14vw;
     .header-1 {
       display: flex;
       div {
@@ -1115,6 +1106,10 @@ footer {
   .contact-form-show,
   .contact-form-hide {
     max-width: 926px;
+  }
+  .card-download-button {
+    width: 350px;
+    margin-top: 0;
   }
   .main-content {
     .featured-perk {
