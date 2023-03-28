@@ -337,8 +337,8 @@
 
   <!-- END PARTNER PERKS SECTION -->
 
-
-  <?php if (is_user_logged_in()) : ?>
+  <?php $hideSection = true; ?>
+  <?php if ($hideSection != true) : ?>
   <!-- START PAYMENT SECTION -->
 
   <div class="payment col-12 float-left pt-5 pb-5 pl-md-5 pr-md-5">
