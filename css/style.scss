@@ -609,7 +609,7 @@ footer {
       }
       .load-more {
         display: flex;
-        margin: 40px auto 30px auto;
+        margin: 40px auto 0 auto;
         text-align: center;
         color: #333033;
         justify-content: center;
@@ -680,7 +680,6 @@ footer {
       }
     }
     .payment {
-      display: none;
       background-color: #A1DFD4;
       color: #FFFFFF;
       .header-1 {
@@ -1181,7 +1180,6 @@ footer {
     }
     .become-partner {
       .become-partner-title {
-        margin-top: 12vh;
         margin-bottom: 65px;
         h3 {
           font-size: 60px;

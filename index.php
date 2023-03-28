@@ -25,9 +25,6 @@
           $notLoggedInCustomClass = '';
         ?>
         <style>
-          .payment {
-            display: block!important;
-          }
           .discount-code {
             display: block!important;
           }
@@ -38,7 +35,6 @@
           $notLoggedInCustomClass = 'not-logged-in';
         ?>
       <?php endif; ?>
-
 
 <div class="main-content">
 
@@ -341,9 +337,9 @@
 
   <!-- END PARTNER PERKS SECTION -->
 
+
+  <?php if (is_user_logged_in()) : ?>
   <!-- START PAYMENT SECTION -->
-
-
 
   <div class="payment col-12 float-left pt-5 pb-5 pl-md-5 pr-md-5">
     <div class="header-1">
@@ -374,8 +370,8 @@
       </div>
     </div>
   </div>
-
   <!-- END PAYMENT SECTION -->
+  <?php endif; ?>
 
   <!-- START BECOME PARTNER SECTION -->
 
