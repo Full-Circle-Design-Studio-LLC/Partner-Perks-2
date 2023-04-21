@@ -206,9 +206,7 @@
   <!-- START PARTNER PERKS SECTION -->
 
   <div class="partner-perks col-12 float-left pt-5 pb-5 pl-md-5 pr-md-5">
-    <div class="partner-perks-title">
-      <span><span class="bold">PARTNER</span> PERKS</span>
-    </div>
+    <h1 class="partner-perks-title"><span class="bold">PARTNER</span> PERKS</h1>
     <div class="partner-perks-text">
       <?php the_content(); ?>
     </div>
