@@ -1812,3 +1812,15 @@ top: 12vh;
   /* close parallax-2 2560px */
 
 }/*close component-parallax-2-2240px*/
+
+
+@media (min-width: 992px) {
+  .footer-lists {
+    display: flex;
+  }
+  .footer-expand {
+    button {
+      margin: 0 0 1rem auto!important;
+    }
+  }
+}
