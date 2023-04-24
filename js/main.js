@@ -1,6 +1,5 @@
 // js to run after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
-  console.log("DOM loaded");
   // wait for entire page to load then call functions and run some stuff
   window.addEventListener('load', (event) => {
     counter = 0;
@@ -42,6 +41,25 @@ function contactUs() {
   document.getElementById("contact-form-toggle").classList.remove("contact-form");
   document.getElementById("contact-form-toggle").classList.remove("contact-form-hide");
   document.getElementById("form-bg").style.display = "block";
+  document.addEventListener('keydown', closeFormEsc);
+  // document.addEventListener('keydown', function(event) {
+  //   if (event.key == "Escape") {
+  //     if (form.classList.contains("contact-form-show")) {
+  //       form.classList.toggle("contact-form-show");
+  //       form.classList.toggle("contact-form-hide");
+  //       document.getElementById("form-bg").style.display = "none";
+  //     }
+  //   }
+  // })
+}
+
+function closeFormEsc() {
+  if (window.event.key == "Escape") {
+    form.classList.remove('contact-form-show');
+    form.classList.add('contact-form-hide');
+    document.getElementById("form-bg").style.display = "none";
+  }
+  document.removeEventListener('keydown', closeFormEsc);
 }
 
 function closeForm() {
@@ -50,25 +68,8 @@ function closeForm() {
     form.classList.toggle("contact-form-hide");
     document.getElementById("form-bg").style.display = "none";
   }
+  document.removeEventListener('keydown', closeFormEsc);
 }
-
-$(document).on(
-  'keydown', function(event) {
-    if (event.key == "Escape") {
-      if (form.classList.contains("contact-form-show")) {
-        form.classList.toggle("contact-form-show");
-        form.classList.toggle("contact-form-hide");
-        document.getElementById("form-bg").style.display = "none";
-      }
-    }
-});
-
-
-// code to make "show more" section ease in and out AND fixing featured partner bar length for short company names ("like Dunkin'")
-
-// showMoreCards = document.getElementById("more-cards");
-// cardList = showMoreCards.querySelectorAll(".card"); //gets all cards (if there are 4, will get 4)
-// moreCardsStyle = document.documentElement.style; // for less messy code
 
 setHeight();
 
@@ -114,9 +115,6 @@ window.addEventListener("resize", function(event) {
     f += 1;
 
   });
-
-//console.log("card height: "+cardHeight);
-//console.log("card height + margin: "+cardHeightPlusMargin);
 
 
 /* ---------------------------------------------------------------------------- MENU JS CODE */
@@ -193,4 +191,38 @@ function slideLoginCancel() {
   login.classList.remove("slide-back-small");
 
   counter = 0;
+}
+
+
+
+// UNIVERSAL DROPDOWN TOGGLE
+
+i = 0;
+
+function dropdownToggle(currentDropdownButton, currentDropdownListID) {
+   currentDropdownList = document.getElementById(currentDropdownListID);
+
+   resetSubMenus(currentDropdownList);
+
+   currentDisplay = window.getComputedStyle(currentDropdownList).display;
+   if (i == 0) {
+      currentDropdownList.setAttribute('aria-hidden','');
+      i = 1;
+   } else {
+      currentDropdownList.setAttribute('aria-hidden','true');
+      i = 0;
+   }
+   currentDropdownButton.parentElement.classList.toggle('nav-item-bold');
+   currentDropdownList.classList.toggle('display-toggle-dropdown');
+}
+
+function resetSubMenus() {
+   dropdownItems = document.querySelectorAll('.dropdown-item');
+   dropdownItems.forEach(dropdown => {
+      if (dropdown != currentDropdownList) {
+         dropdown.setAttribute('aria-hidden','true');
+         dropdown.classList.remove('display-toggle-dropdown');
+         dropdown.parentElement.classList.remove('nav-item-bold');
+      }
+   });
 }
