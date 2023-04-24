@@ -28,7 +28,7 @@
     <li class="d-lg-none"><a href="https://www.burnsscalorealestate.com/accessibility/">ACCESSIBILITY</a></li>
     <li class="divider d-md-none"></li>
     <li class="d-block"><a href="https://www.securecafe3.com/tenantportal/commercialleasing/userlogin.aspx?companyid=1" target="_blank">CLIENT PORTAL</a></li>
-    <li class="d-block"><a href="<?php echo get_site_url(); ?>">PARTNER PERKS</a></li>
+    <li class="d-block d-lg-none"><a href="<?php echo get_site_url(); ?>">PARTNER PERKS</a></li>
     <li class="divider d-md-none"></li>
     <li class="#"><a href="https://www.burnsscalorealestate.com/career-hub/">CAREER HUB</a></li>
     <li class="d-lg-none"><a href="https://www.burnsscalorealestate.com/company-portal/" target="_blank">EMPLOYEE PORTAL</a></li>

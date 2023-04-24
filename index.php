@@ -43,6 +43,7 @@
 
   <!-- START CAROUSEL -->
   <div id="carouselExampleControls" class="carousel slide featured-perk" data-ride="carousel">
+    <div class="temp"></div>
     <div class="carousel-inner">
     <?php
         $i = 0;
