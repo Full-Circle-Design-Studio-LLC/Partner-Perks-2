@@ -1,0 +1,116 @@
+.popup-menu-background {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+.popup-menu {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    padding: 30px;
+    gap: 20px;
+    text-align: center;
+    font-family: gotham;
+    width: 350px;
+}
+.popup-menu_standard {
+    height: 350px;
+    margin: -165px auto 0 auto;
+}
+.popup-menu_auto-height {
+    height: fit-content;
+}
+.popup-menu_centered {
+    inset: 50vh 0 0;
+}
+.popup-menu_ready-suites {
+    padding-top: 45px;
+    margin: -235px auto 0 auto;
+    .box-link {
+        margin-top: 15px;
+    }
+    .popup-menu__image_lg {
+        height: 45px;
+        width: auto;
+    }
+}
+
+.popup-menu__heading {
+    font-weight: 900;
+}
+.popup-menu__image {
+    width: 55px;
+}
+.popup-menu__subtext {
+    font-size: 14px;
+}
+.popup-menu__subtext_paragraph {
+    text-align: left;
+    color: #67686B;
+}
+
+.button_close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.button_go-back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #67686b;
+}
+
+
+@media (min-width: 768px) {
+    .popup-menu_ready-suites {
+        height: 550px;
+        width: 450px;
+        padding: 50px 50px 10px 50px;
+        .box-link {
+            margin-top: 35px;
+        }
+        .popup-menu__image {
+            height: 55px;
+        }
+        .button_close {
+            width: 25px;
+        }
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .popup-menu_ready-suites {
+        width: 850px;
+        height: 565px;
+        padding: 60px 150px 10px 150px;
+        margin-top: -250px;
+        .popup-menu__image {
+            height: 80px;
+        }
+        .popup-menu__subtext {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .box-link {
+            width: 260px;
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .popup-menu_login {
+        margin-top: -215px;
+    }
+}

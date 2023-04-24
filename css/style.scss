@@ -2,6 +2,7 @@
 @use 'components/variables' as v;
 @use 'components/nav';
 @use 'components/perks-subnav';
+@use 'components/popup-menu';
 $phone-max: 700px;
 $tablet-max: 1100px;
 

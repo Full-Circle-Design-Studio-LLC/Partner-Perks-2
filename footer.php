@@ -1,4 +1,20 @@
 <?php wp_footer(); ?>
+<div id="employee-login-menu-background" class="popup-menu-background" onclick="popupMenuToggle()"></div>
+<div id="employee-login-menu" class="popup-menu popup-menu_standard popup-menu_centered popup-menu_login">
+  <button class="button_close button-remove-style" onclick="popupMenuToggle()">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/close.svg">
+  </button>
+  <img class="popup-menu__image" src="<?php echo get_template_directory_uri(); ?>/assets/mark.svg" alt="">
+  <div class="popup-menu__heading">BURNS SCALO EMPLOYEE LOGIN</div>
+  <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Employee Portal") ) : ?><?php endif;?>
+  <a class="d-none box-link box-link_turquoise box-link_full" href="#">Log In</a>
+  <div class="popup-menu__subtext">Login using your Burns Scalo email credentials.</div>
+  <button class="button button_go-back button-remove-style" onclick="popupMenuToggle()">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/arrow-left.svg" alt="">
+    <div class="button_go-back__text">GO BACK</div>
+  </button>
+</div>
+
 <footer class="col-12">
   <ul class="col-6 col-md-2 offset-md-1 offset-xl-0 p-0">
     <li class="offset-md-3 offset-lg-0 offset-xl-0"><a href="https://www.linkedin.com/company/burns-&-scalo-real-estate-services" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/linkedin.svg" alt="logo link to LinkedIn"></a></li>
@@ -32,17 +48,15 @@
   </ul>
     <ul class="col-2 float-left">
       <li><a href="https://www.burnsscalorealestate.com/career-hub/">CAREER HUB</a></li>
-      <li><a href="https://partner-perks.burnsscalorealestate.com/" target="_blank">PARTNER PERKS</a></li>
+      <li><a href="<?php echo get_site_url(); ?>">PARTNER PERKS</a></li>
     </ul>
   <ul class="col-2 float-left">
     <li><a href="https://www.securecafe3.com/tenantportal/commercialleasing/userlogin.aspx?companyid=1" target="_blank">CLIENT PORTAL</a></li>
-    <li><a href="
-      <?php if ( is_user_logged_in() ) {
-              echo 'https://burnsscalorealestate.com/company-portal'; }
-            else {
-              echo 'https://burnsscalorealestate.com/wp-admin';
-              } ?>
-      ">EMPLOYEE PORTAL</a></li>
+      <?php if (is_user_logged_in()) : ?>
+      <li><a href="https://www.burnsscalorealestate.com/company-portal/" target="_blank">EMPLOYEE PORTAL</a></li>
+      <?php else : ?>
+      <li onclick="popupMenuToggle()"><a href="#">EMPLOYEE PORTAL</a></li>      
+      <?php endif; ?>
   </ul>
 <ul class="col-2 float-left d-none" id="employee">
   <style>
@@ -82,6 +96,7 @@
   </div>
 </div>
 
+<script src="<?php echo get_template_directory_uri(); ?>/js/popup-menu.js"></script>
 <script type="text/javascript">
     (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
     vgo('setAccount', '224658773');
