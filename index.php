@@ -37,46 +37,31 @@
 <?php endif; ?>
 
 <div class="main-content">
-
-        
-        <div class="test">
-        <?php
-          $featuredPerks = get_field('featured_perks');
-          echo 'id: ';
-          $featuredPerk_1 = $featuredPerks[0];
-          $featuredPerk_2 = $featuredPerks[1];
-          $featuredPerk_3 = $featuredPerks[2];
-        ?>
-        </div>
+<?php
+  $featuredPerks = get_field('featured_perks');
+?>
 
   <!-- START CAROUSEL -->
-
   <div id="carouselExampleControls" class="carousel slide featured-perk" data-ride="carousel">
     <div class="carousel-inner">
-
-
-      <?php
-          $args = array(
-              'post_type' => 'partners',
-              'p' => intval($featuredPerk_1)
-          );
-          $the_query = new WP_Query( $args ); ?>
-
-          <?php if ( $the_query->have_posts() ) : ?>
-
-              <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
+    <?php
+        $i = 0;
+        $args = array(
+            'post_type' => 'partners',
+            'post__in' => $featuredPerks,
+            'orderby' => 'post__in'
+        );
+        $the_query = new WP_Query( $args ); ?>
+        <?php if ( $the_query->have_posts() ) : ?>
+            <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
       <!-- CONTENT GOES HERE -->
-      <div class="carousel-item active">
+      <div class="carousel-item <?php if ($i == 0) {echo 'active'; $i++;} ?>">
         <div class="hero">
           <?php $image = get_field('hero-image-m'); ?>
           <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-lg-none <?php the_field('hero_image_alignment'); ?>">
-
           <?php $image = get_field('hero-image-d'); ?>
           <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-none d-lg-block <?php the_field('hero_image_alignment'); ?>">
-
-
         </div>
         <div class="featured-perk-content">
           <div class="featured-perk-text">
@@ -92,119 +77,13 @@
         </div>
         <div class="gradient"></div>
       </div>
-
-              <?php endwhile; ?>
-
+      <?php endwhile; ?>
       <?php wp_reset_postdata(); ?>
-
       <?php endif; ?>
-
-
-
-      <?php
-          $args = array(
-            'post_type' => 'partners',
-            'p' => intval($featuredPerk_2)
-          );
-          $the_query = new WP_Query( $args ); ?>
-
-          <?php if ( $the_query->have_posts() ) : ?>
-
-              <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-
-      <!-- CONTENT GOES HERE -->
-      <div class="carousel-item">
-        <div class="hero">
-          <?php $image = get_field('hero-image-m'); ?>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-lg-none">
-
-          <?php $image = get_field('hero-image-d'); ?>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-none d-lg-block">
-
-
-        </div>
-        <div class="featured-perk-content">
-          <div class="featured-perk-text">
-            <div class="bar"></div>
-            <span class="bold">FEATURED</span><span> PARTNER</span>
-          </div>
-          <div class="featured-perk-name">
-            <div class="bold featured-perk-name-div"><div class="new-bar"></div><?php the_title(); ?></div>
-          </div>
-          <div class="featured-perk-address">
-            <span><?php the_field('address'); ?></span>
-          </div>
-        </div>
-        <div class="gradient"></div>
-      </div>
-
-              <?php endwhile; ?>
-
-      <?php wp_reset_postdata(); ?>
-
-      <?php endif; ?>
-
-
-
-      <?php
-          $args = array(
-            'post_type' => 'partners',
-            'p' => intval($featuredPerk_3)
-          );
-          $the_query = new WP_Query( $args ); ?>
-
-          <?php if ( $the_query->have_posts() ) : ?>
-
-              <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-
-      <!-- CONTENT GOES HERE -->
-      <div class="carousel-item">
-        <div class="hero">
-          <?php $image = get_field('hero-image-m'); ?>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-lg-none">
-
-
-          <?php $image = get_field('hero-image-d'); ?>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-none d-lg-block">
-
-
-
-
-        </div>
-        <div class="featured-perk-content">
-          <div class="featured-perk-text">
-            <div class="bar"></div>
-            <span class="bold">FEATURED</span><span> PARTNER</span>
-          </div>
-          <div class="featured-perk-name">
-            <div class="bold featured-perk-name-div"><div class="new-bar"></div><?php the_title(); ?></div>
-          </div>
-          <div class="featured-perk-address">
-            <span><?php the_field('address'); ?></span>
-          </div>
-        </div>
-        <div class="gradient"></div>
-      </div>
-
-              <?php endwhile; ?>
-
-      <?php wp_reset_postdata(); ?>
-
-      <?php endif; ?>
-
-
-
-
-
     </div>
-  </div>
-
-  <!-- END CAROUSEL -->
+  </div><!-- END CAROUSEL -->
 
   <!-- START PARTNER PERKS SECTION -->
-
   <div class="partner-perks col-12 float-left pt-5 pb-5 pl-md-5 pr-md-5">
     <h1 class="partner-perks-title"><span class="bold">PARTNER</span> PERKS</h1>
     <div class="partner-perks-text">
@@ -254,11 +133,7 @@
 
       <?php wp_reset_postdata(); ?>
 
-      <?php endif; ?>
-
-      <!-- END COMPANY CARD LOOP -->
-
-      
+      <?php endif; ?><!-- END COMPANY CARD LOOP -->
 
       </div>
 
@@ -273,11 +148,8 @@
               'posts_per_page' => -1
           );
           $the_query = new WP_Query( $args ); ?>
-
           <?php if ( $the_query->have_posts() ) : ?>
-
               <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-          <!-- CONTENT GOES HERE -->
 
           <div class="card card-more <?php echo 'card-'.$notLoggedInCustomClass; ?>">
             <div class="company-logo">
@@ -292,7 +164,6 @@
                 <div><?php the_field('discountincentive'); ?></div>
                 <div class="discount-code"><?php the_field('discountcode'); ?></div>
               </div>
-
 
             </div>
             <div class="company-name-2 <?php echo $hideIfNotLoggedIn; ?>">
@@ -411,17 +282,13 @@
 
       </div>
     </div>
-  </div>
-
-  <!-- END BECOME PARTNER SECTION -->
+  </div><!-- END BECOME PARTNER SECTION -->
 
   <!-- START MAILING LIST SECTION -->
-
   <div class="mailing-list col-12 float-left pt-5">
     <div class="mailing-list-text">
       <span><?php the_field('mailing_list_text'); ?></span>
     </div>
-
 
     <?php echo do_shortcode('[contact-form-7 id="36" title="Mailing List"]'); ?>
 
@@ -430,13 +297,9 @@
         <a href="https://www.burnsscalorealestate.com/privacy-policy/" target="_blank">PRIVACY POLICY</a>
       </div>
     </div>
-  </div>
+  </div><!-- END MAILING LIST SECTION -->
 
-  <!-- END MAILING LIST SECTION -->
-
-</div>
-
-<!-- END PAGE CONTENT -->
+</div><!-- END PAGE CONTENT -->
 
 <style>
 html {
