@@ -1,5 +1,6 @@
 @use 'components/components';
 @use 'components/variables' as v;
+@use 'components/nav';
 @use 'components/perks-subnav';
 $phone-max: 700px;
 $tablet-max: 1100px;
@@ -23,6 +24,14 @@ $tablet-max: 1100px;
 @keyframes unhideCards {
   0% {height: 0;}
   100% {height: var(--more-cards-height);}
+}
+
+.button-remove-style {
+  background-color: unset;
+  border: none;
+}
+.button-remove-style:focus {
+  outline: none;
 }
 
 // registration

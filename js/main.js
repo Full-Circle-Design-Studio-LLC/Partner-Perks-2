@@ -192,3 +192,37 @@ function slideLoginCancel() {
 
   counter = 0;
 }
+
+
+
+// UNIVERSAL DROPDOWN TOGGLE
+
+i = 0;
+
+function dropdownToggle(currentDropdownButton, currentDropdownListID) {
+   currentDropdownList = document.getElementById(currentDropdownListID);
+
+   resetSubMenus(currentDropdownList);
+
+   currentDisplay = window.getComputedStyle(currentDropdownList).display;
+   if (i == 0) {
+      currentDropdownList.setAttribute('aria-hidden','');
+      i = 1;
+   } else {
+      currentDropdownList.setAttribute('aria-hidden','true');
+      i = 0;
+   }
+   currentDropdownButton.parentElement.classList.toggle('nav-item-bold');
+   currentDropdownList.classList.toggle('display-toggle-dropdown');
+}
+
+function resetSubMenus() {
+   dropdownItems = document.querySelectorAll('.dropdown-item');
+   dropdownItems.forEach(dropdown => {
+      if (dropdown != currentDropdownList) {
+         dropdown.setAttribute('aria-hidden','true');
+         dropdown.classList.remove('display-toggle-dropdown');
+         dropdown.parentElement.classList.remove('nav-item-bold');
+      }
+   });
+}

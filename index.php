@@ -1,40 +1,40 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header() ?>
-      </header>
-      <?php get_template_part('nav'); ?>
-      <?php get_template_part('perks-subnav'); ?>
+</header>
+<body>
+<?php get_template_part('nav'); ?>
+<?php get_template_part('perks-subnav'); ?>
 
+<div class="contact-form" id="contact-form-toggle" onclick="closeForm">
+  <?php echo do_shortcode('[contact-form-7 id="32" title="Contact form 1"]'); ?>
 
-      <div class="contact-form" id="contact-form-toggle" onclick="closeForm">
-        <?php echo do_shortcode('[contact-form-7 id="32" title="Contact form 1"]'); ?>
+</div>
+<div class="contact-form-bg" id="form-bg" onclick="closeForm">
+</div>
 
-      </div>
-      <div class="contact-form-bg" id="form-bg" onclick="closeForm">
-      </div>
+<div class="success-form">
+  <div class="success-x">x</div>
+  <div class="success-title bold">SUCCESS!</div>
+  <div class="success-text-1">Someone will be in touch with you shortly.</div>
+  <div class="success-text-2">Thank you for reaching out about our Partner Perks program.</div>
+</div>
 
-      <div class="success-form">
-        <div class="success-x">x</div>
-        <div class="success-title bold">SUCCESS!</div>
-        <div class="success-text-1">Someone will be in touch with you shortly.</div>
-        <div class="success-text-2">Thank you for reaching out about our Partner Perks program.</div>
-      </div>
-
-      <?php if ( is_user_logged_in() ) : ?>
-        <?php 
-          $hideIfNotLoggedIn = '';
-          $notLoggedInCustomClass = '';
-        ?>
-        <style>
-          .discount-code {
-            display: block!important;
-          }
-        </style>
-      <?php else : ?>
-        <?php 
-          $hideIfNotLoggedIn = 'd-none';
-          $notLoggedInCustomClass = 'not-logged-in';
-        ?>
-      <?php endif; ?>
+<?php if ( is_user_logged_in() ) : ?>
+  <?php 
+    $hideIfNotLoggedIn = '';
+    $notLoggedInCustomClass = '';
+  ?>
+  <style>
+    .discount-code {
+      display: block!important;
+    }
+  </style>
+<?php else : ?>
+  <?php 
+    $hideIfNotLoggedIn = 'd-none';
+    $notLoggedInCustomClass = 'not-logged-in';
+  ?>
+<?php endif; ?>
 
 <div class="main-content">
 
@@ -312,24 +312,12 @@
     <div class="load-more" onclick="loadMore()">
       <button class="accordion-button load-more-and-icon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
         <span id="load-more-span" class="load-more-text">LOAD MORE</span>
-        <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?">
-        <img class="arrow-up" id="arrow-up" src="<?php echo get_template_directory_uri(); ?>/assets/arrow-up.svg?">
+        <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?" alt="">
+        <img class="arrow-up" id="arrow-up" src="<?php echo get_template_directory_uri(); ?>/assets/arrow-up.svg?" alt="">
       </button>
     </div>
   </div>
 </div> <!-- END ACCORDION -->
-
-      <!-- START LOAD MORE BUTTON (OLD) -->
-
-      <div class="load-more d-none">
-        <div class="load-more-and-icon" onclick="loadMore()">
-          <span id="load-more-span" class="load-more-text">LOAD MORE</span>
-          <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?">
-          <img class="arrow-up" id="arrow-up" src="<?php echo get_template_directory_uri(); ?>/assets/arrow-up.svg?">
-        </div>
-      </div>
-
-      <!-- END LOAD MORE BUTTON -->
 
   </div>
 
@@ -446,8 +434,6 @@
 
   <!-- END MAILING LIST SECTION -->
 
-
-
 </div>
 
 <!-- END PAGE CONTENT -->
@@ -459,3 +445,6 @@ html {
 </style>
 
 <?php get_footer(); ?>
+
+</body>
+</html>

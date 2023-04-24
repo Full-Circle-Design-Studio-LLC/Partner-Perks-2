@@ -31,7 +31,6 @@ add_action( 'wp_enqueue_scripts', 'fcdtemplate_enqueue_styles' );
 
 function fcdtemplate_enqueue_js() {
   wp_enqueue_script( 'bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), true);
-
   wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js' );
 
 //  https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js

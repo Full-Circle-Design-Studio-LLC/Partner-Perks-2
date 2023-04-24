@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,5 +15,7 @@
   <h5 class="#">A Luxury Real Estate Firm</h5>
 
   <div class="menu-container col-1 d-xl-none">
-  <a onclick="dropdownMenu()" class="col-12 float-left"><img src="<?php echo get_template_directory_uri(); ?>/assets/menu.svg" alt="Dropdown Menu" class="dropdown-menu-custom"></a>
+  <button onclick="dropdownMenu()" class="col-12 float-left button-remove-style">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/menu.svg" alt="Dropdown Menu" class="dropdown-menu-custom">
+  </button>
   </div>
