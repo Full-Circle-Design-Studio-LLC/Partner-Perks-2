@@ -27,10 +27,10 @@
     <li class="d-lg-none"><a href="https://www.burnsscalorealestate.com/privacy/">PRIVACY POLICY</a></li>
     <li class="d-lg-none"><a href="https://www.burnsscalorealestate.com/accessibility/">ACCESSIBILITY</a></li>
     <li class="divider d-md-none"></li>
-    <li class="#"><a href="https://www.burnsscalorealestate.com/career-hub/">CAREER HUB</a></li>
+    <li class="d-block"><a href="https://www.securecafe3.com/tenantportal/commercialleasing/userlogin.aspx?companyid=1" target="_blank">CLIENT PORTAL</a></li>
     <li class="d-block"><a href="<?php echo get_site_url(); ?>">PARTNER PERKS</a></li>
     <li class="divider d-md-none"></li>
-    <li class="d-block"><a href="https://www.securecafe3.com/tenantportal/commercialleasing/userlogin.aspx?companyid=1" target="_blank">CLIENT PORTAL</a></li>
+    <li class="#"><a href="https://www.burnsscalorealestate.com/career-hub/">CAREER HUB</a></li>
     <li class="d-lg-none"><a href="https://www.burnsscalorealestate.com/company-portal/" target="_blank">EMPLOYEE PORTAL</a></li>
     <li class="d-none d-lg-block"><button class="cursor-pointer button-remove-style" onclick="footerExpand(), footerList()">MORE^</button></li>
   </ul>
@@ -47,12 +47,12 @@
     <li><a href="https://www.burnsscalorealestate.com/accessibility/">ACCESSIBILITY</a></li>
   </ul>
     <ul class="col-2 float-left">
-      <li><a href="https://www.burnsscalorealestate.com/career-hub/">CAREER HUB</a></li>
+      <li><a href="https://www.securecafe3.com/tenantportal/commercialleasing/userlogin.aspx?companyid=1" target="_blank">CLIENT PORTAL</a></li>
       <li><a href="<?php echo get_site_url(); ?>">PARTNER PERKS</a></li>
     </ul>
   <ul class="col-2 float-left">
-    <li><a href="https://www.securecafe3.com/tenantportal/commercialleasing/userlogin.aspx?companyid=1" target="_blank">CLIENT PORTAL</a></li>
-      <?php if (is_user_logged_in()) : ?>
+    <li><a href="https://www.burnsscalorealestate.com/career-hub/">CAREER HUB</a></li>
+    <?php if (is_user_logged_in()) : ?>
       <li><a href="https://www.burnsscalorealestate.com/company-portal/" target="_blank">EMPLOYEE PORTAL</a></li>
       <?php else : ?>
       <li onclick="popupMenuToggle()"><a href="#">EMPLOYEE PORTAL</a></li>      
