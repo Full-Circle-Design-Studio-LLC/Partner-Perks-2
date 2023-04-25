@@ -1,7 +1,7 @@
 <div class="culture-subnav" id="culture-subnav">
 
   <a href="<?php echo get_site_url() ?>" aria-label="Partner Perks homepage">
-    <img class="pp-logo" src="<?php echo get_template_directory_uri(); ?>/assets/partner-perks.svg" alt="Partner Perks logo">
+    <img class="pp-logo" src="<?php echo get_template_directory_uri(); ?>/assets/partner-perks.svg" alt="Partner Perks logo" width="193" height="30">
   </a>
 
   <?php if ( is_user_logged_in() ) : ?>
@@ -18,7 +18,7 @@
   <?php endif; ?>
 
   <div class="subnav-login">
-    <img onclick="slideLogin()" class="subnav-profile-icon-img" src="<?php echo get_template_directory_uri(); ?>/assets/Subtraction1.svg" alt="user icon">
+    <img onclick="slideLogin()" class="subnav-profile-icon-img" src="<?php echo get_template_directory_uri(); ?>/assets/Subtraction1.svg" alt="user icon" width="38" height="35">
     <a class="login" href="<?php echo get_site_url() ?>/wp-login.php">Login</a>
     <a class="sign-up subnav-sign-up" href="<?php echo get_site_url() ?>/register">Sign Up</a>
   </div>
