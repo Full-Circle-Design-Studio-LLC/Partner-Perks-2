@@ -52,11 +52,11 @@
       <div class="carousel-item <?php if ($i == 0) {echo 'active'; $i++;} ?>">
         <?php if (get_field('hero-image-m')) : ?>
           <?php $image = get_field('hero-image-m'); ?>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-lg-none <?php the_field('hero_image_alignment'); ?>">
+          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-lg-none <?php the_field('hero_image_alignment'); ?>" loading="lazy">
         <?php endif; ?>
         <?php if (get_field('hero-image-d')) : ?>
           <?php $image = get_field('hero-image-d'); ?>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-none d-lg-block <?php the_field('hero_image_alignment'); ?>">
+          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" class="d-none d-lg-block <?php the_field('hero_image_alignment'); ?>" loading="lazy">
         <?php endif; ?>
         <div class="featured-perk-content">
           <div class="featured-perk-text">
@@ -183,8 +183,8 @@
     </div>
       <button class="accordion-button load-more-and-icon button-remove-style load-more" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="loadMore()">
         <span id="load-more-span" class="load-more-text">LOAD MORE</span>
-        <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?" alt="">
-        <img class="arrow-up" id="arrow-up" src="<?php echo get_template_directory_uri(); ?>/assets/arrow-up.svg?" alt="">
+        <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?" alt="" width="24" height="13">
+        <img class="arrow-up" id="arrow-up" src="<?php echo get_template_directory_uri(); ?>/assets/arrow-up.svg?" alt="" width="24" height="13">
       </button>
   </div>
 </div> <!-- END ACCORDION -->
@@ -215,7 +215,7 @@
 
       <div class="profile-card">
         <?php $photo = get_field('photo'); ?>
-        <img class="profile-photo" src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>">
+        <img class="profile-photo" src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>" loading="lazy">
         <div class="profile-info">
           <span class="bold"><?php the_field('firstname'); ?> </span><?php the_field('lastname'); ?><br>
           <span class="profile-role"><?php the_field('position'); ?></span><br>
@@ -227,7 +227,7 @@
       <?php if (get_field('show_second_contact') == 'Show') : ?>
       <div class="profile-card">
         <?php $photo = get_field('photo_2'); ?>
-        <img class="profile-photo" src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>">
+        <img class="profile-photo" src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>" loading="lazy">
         <div class="profile-info">
           <span class="bold"><?php the_field('first_name_2'); ?> </span><?php the_field('last_name_2'); ?><br>
           <span class="profile-role"><?php the_field('position_2'); ?></span><br>

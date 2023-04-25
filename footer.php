@@ -17,8 +17,8 @@
 
 <footer class="col-12">
   <ul class="col-6 col-md-2 offset-md-1 offset-xl-0 p-0">
-    <li class="offset-md-3 offset-lg-0 offset-xl-0"><a href="https://www.linkedin.com/company/burns-&-scalo-real-estate-services" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/linkedin.svg" alt="logo link to LinkedIn"></a></li>
-    <li class="offset-md-3 offset-lg-0 offset-xl-0"><a href="https://www.instagram.com/BurnsScaloRE/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/instagram.svg" alt="logo link to Instragram"></a></li>
+    <li class="offset-md-3 offset-lg-0 offset-xl-0"><a href="https://www.linkedin.com/company/burns-&-scalo-real-estate-services" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/linkedin.svg" alt="logo link to LinkedIn" width="35" height="30"></a></li>
+    <li class="offset-md-3 offset-lg-0 offset-xl-0"><a href="https://www.instagram.com/BurnsScaloRE/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/instagram.svg" alt="logo link to Instragram" width="30" height="30"></a></li>
   </ul>
   <ul class="float-right">
     <li><a href="https://www.burnsscalorealestate.com/about/">ABOUT</a></li>
@@ -86,17 +86,17 @@
   </span>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <!-- END CURRENT USER-->
 
   <button onclick="footerExpand(), footerListRemove()" class="col-1 float-left button-remove-style">
-    <img class="cursor-pointer" src="<?php echo get_template_directory_uri(); ?>/assets/close-x.svg" alt="X to close">
+    <img class="cursor-pointer" src="<?php echo get_template_directory_uri(); ?>/assets/close-x.svg" alt="X to close" width="25" height="25">
   </button>
   </div>
 </div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/popup-menu.js"></script>
+<script defer src="<?php echo get_template_directory_uri(); ?>/js/popup-menu.js"></script>
 <script type="text/javascript">
     (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
     vgo('setAccount', '224658773');

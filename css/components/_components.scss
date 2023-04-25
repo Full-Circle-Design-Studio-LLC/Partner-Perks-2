@@ -31,6 +31,7 @@ header{
 
   img{
     width: 30px!important;
+    height: auto;
     float: left;
     margin-top: 7.5px;
   }
@@ -47,6 +48,13 @@ h5{
 width: 67%; // changed 50% to 67% -Weston
 
 }
+}
+.logo-container {
+  a {
+    img {
+      height: auto;
+    }
+  }
 }
 
 .menu-container{
