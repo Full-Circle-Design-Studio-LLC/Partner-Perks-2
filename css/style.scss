@@ -619,26 +619,27 @@ footer {
       }
       .load-more {
         display: flex;
+        align-items: center;
         margin: 40px auto 0 auto;
         text-align: center;
         color: #333033;
         justify-content: center;
+        img {
+          margin-left: 10px;
+          width: 24px;
+        }
+        .arrow-up {
+          display: none;
+        }
+        .load-more-text {
+          flex-shrink: 0;
+        }
         .load-more-and-icon {
           display: flex;
           background: none;
           border: none;
           align-items: center;
           outline: none;
-          img {
-            margin-left: 10px;
-            width: 24px;
-          }
-          .arrow-up {
-            display: none;
-          }
-          .load-more-text {
-            flex-shrink: 0;
-          }
         }
         .load-more-and-icon:hover {
           cursor: pointer;
@@ -687,30 +688,6 @@ footer {
         }
       }
     }
-    .payment {
-      background-color: #A1DFD4;
-      color: #FFFFFF;
-      .header-1 {
-        font-size: 51px;
-        line-height: 51px;
-      }
-      .header-2 {
-        font-size: 45px;
-        margin-top: 10vh;
-        font-weight: bold;
-        line-height: 48px;
-      }
-      .apple {
-        margin-top: 10vh;
-        img {
-          width: 238px;
-          height: 74px;
-        }
-      }
-      .google {
-        margin-top: 15px;
-      }
-    }
     .become-partner {
       background-color: white;
       .become-partner-title {
@@ -731,9 +708,7 @@ footer {
         width: 180px;
         height: 45px;
         background-color: #A1DFD4;
-        .text {
-          color: white;
-        }
+        color: white;
       }
       .contact-us:hover {
         text-decoration: none;
@@ -749,11 +724,9 @@ footer {
         .profile-photo {
           margin-top: 5vh;
           margin-bottom: 20px;
-
-          img {
-            width: 100%;
-            height: auto;
-          }
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1/1;
         }
         .profile-info {
           font-size: 20px;
@@ -794,16 +767,14 @@ footer {
       .sign-up:hover {
         text-decoration: none;
       }
-      .terms-privacy {
+      .privacy {
         font-size: 21px;
-        .privacy {
-          a {
-            color: #B7B7B7;
-          }
-          a:hover {
-            text-decoration: none;
-          }
-        }
+        color: #B7B7B7;
+        width: fit-content;
+        margin: auto;
+      }
+      .privacy:hover {
+        text-decoration: none;
       }
     }
   }
@@ -835,29 +806,6 @@ footer {
       }
     }
   }
-}
-.card-download-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  width: 100%;
-  max-width: 350px;
-  height: 90px;
-  border: 2px solid white;
-  border-radius: 5px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0.5));
-  font-size: 19px;
-  margin-top: 25px;
-  gap: 15px;
-
-  img {
-    width: 55px;
-  }
-}
-.card-download-button:hover {
-  text-decoration: none;
-  color: black;
 }
 
 /* ---------------------------------------------------------------- TABLET SCREEN SIZE */
@@ -930,32 +878,6 @@ footer {
       }
     }
 
-  .payment {
-    .header-1 {
-      display: flex;
-      div {
-      font-size: 46px;
-      }
-      .made-easy {
-        margin-right: 1rem;
-      }
-    }
-    .header-2 {
-      span {
-        font-size: 72px;
-      }
-    }
-    .add-card {
-      .pay-links {
-      }
-      .header-2 {
-        .add-card-text {
-          font-size: 60px;
-          line-height: 1.1;
-        }
-      }
-    }
-  }
   .become-partner {
     .become-partner-title {
       display: flex;
@@ -983,9 +905,7 @@ footer {
         margin-left: 5px;
         margin-right: 5px;
         .profile-photo {
-          img {
-            max-height: 318px;
-          }
+          max-height: 318px;
         }
         .profile-info {
           .profile-role,
@@ -1034,14 +954,8 @@ footer {
         }
       }
     }
-    .terms-privacy {
-      display: flex;
-      justify-content: center;
-      margin: 70px 18vw 0 18vw;
-      .privacy {
-        margin: 0;
-        padding: 0;
-      }
+    .privacy {
+      margin: 70px auto 0 auto;
     }
   }
 }
@@ -1110,10 +1024,6 @@ footer {
   .contact-form-hide {
     max-width: 926px;
   }
-  .card-download-button {
-    width: 350px;
-    margin-top: 0;
-  }
   .main-content {
     .featured-perk {
       height: calc(100% - 40px);
@@ -1149,36 +1059,6 @@ footer {
         }
         .featured-perk-address {
           font-size: 27px;
-        }
-      }
-    }
-    .payment {
-      padding: 20vh 12vw!important;
-      .header-1 {
-        justify-content: center;
-        div {
-        font-size: 56px;
-        }
-      }
-      .add-card {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: center;
-        margin-top: 12vh;
-        .pay-links {
-          margin-right: 1.5vw;
-          .apple {
-            margin-top: 0;
-          }
-        }
-        .header-2 {
-          margin-top: 0;
-          margin-left: 1.5vw;
-          max-width: 848px;
-          .add-card-text {
-            font-size: 61px;
-          }
         }
       }
     }
@@ -1244,9 +1124,6 @@ footer {
           width: 210px;
           font-size: 32px;
         }
-      }
-      .terms-privacy {
-        justify-content: center;
       }
     }
   }

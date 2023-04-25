@@ -15,8 +15,6 @@ add_theme_support( 'starter-content' );
 
 // Load in our CSS
 function fcdtemplate_enqueue_styles() {
-
-
   wp_enqueue_style( 'bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
   wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/css/style.css', [], time(), 'all' );
   wp_enqueue_style( 'fonts', get_stylesheet_directory_uri() . '/css/fonts/stylesheet.css', [], time(), 'all' );
