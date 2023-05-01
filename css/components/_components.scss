@@ -15,9 +15,15 @@ body{
   overflow-x: hidden;
 }
 
+button {
+  color: inherit;
+}
+
 //COMPONENT-HEADER -----------------------------------------------------------------
 
 header{
+  display: flex;
+  align-items: center;
   padding: 15px;
   float: left;
   z-index: 200;
@@ -33,7 +39,6 @@ header{
     width: 30px!important;
     height: auto;
     float: left;
-    margin-top: 7.5px;
   }
 
 h5{
@@ -60,7 +65,7 @@ width: 67%; // changed 50% to 67% -Weston
 
 .menu-container{
   float: right;
-  margin-right: 40px;
+  margin-left: auto;
 }
 /*close header*/
 
@@ -75,7 +80,6 @@ width: 67%; // changed 50% to 67% -Weston
   header{
     img{
       width: 40px!important;
-      margin-top: 5px;
       max-width: 45px;
       float: right;
     }
@@ -83,10 +87,6 @@ width: 67%; // changed 50% to 67% -Weston
     h5{
       font-size: 21px;
       padding-top: 10px;
-    }
-
-    .dropdown-menu-custom{
-      margin-top: 7.5px;
     }
   }
 }/* close header-768px */
