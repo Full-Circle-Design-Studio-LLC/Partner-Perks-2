@@ -24,7 +24,7 @@ button {
 header{
   display: flex;
   align-items: center;
-  padding: 15px;
+  height: 67px;
   float: left;
   z-index: 200;
   background-color: white;
@@ -66,6 +66,7 @@ width: 67%; // changed 50% to 67% -Weston
 .menu-container{
   float: right;
   margin-left: auto;
+  padding: 15px 9px;
 }
 /*close header*/
 
@@ -75,9 +76,11 @@ width: 67%; // changed 50% to 67% -Weston
   .menu-container{
     float: right;
     margin-right: 10px;
+    padding: 12px 4px;
   }
 
   header{
+    height: 73px;
     img{
       width: 40px!important;
       max-width: 45px;

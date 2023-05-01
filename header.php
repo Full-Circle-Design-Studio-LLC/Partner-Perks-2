@@ -14,6 +14,6 @@
 </div>
   <h5 class="#">A Luxury Real Estate Firm</h5>
 
-  <button onclick="dropdownMenu()" class="menu-container p-0 d-xl-none float-left button-remove-style">
+  <button onclick="dropdownMenu()" class="menu-container d-xl-none float-left button-remove-style">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/menu.svg" alt="Dropdown Menu" width="30" height="18">
   </button>
