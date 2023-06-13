@@ -3,6 +3,7 @@
 @use 'components/nav';
 @use 'components/perks-subnav';
 @use 'components/popup-menu';
+@use 'pages/page-404';
 $phone-max: 700px;
 $tablet-max: 1100px;
 
@@ -262,6 +263,16 @@ footer {
   .success-text-2 {
     margin-top: 70px;
   }
+}
+
+.pp-button {
+  color: white;
+  background-color: #a1dfd4;
+  padding: 5px 20px;
+}
+.pp-button:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .company-cards,
