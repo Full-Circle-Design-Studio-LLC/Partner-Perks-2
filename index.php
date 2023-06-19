@@ -36,6 +36,11 @@
 
   <!-- START CAROUSEL -->
   <div id="carouselExampleSlidesOnly" class="carousel slide featured-perk" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <? for ($i=0; $i < count( $featuredPerks ); $i++) : ?>
+      <li data-target="#carouselExampleSlidesOnly" data-slide-to="<? echo $i; ?>" <? if ( $i == 0 ) { echo 'class="active"'; } ?>></li>
+    <? endfor; ?>
+  </ol>
     <div class="carousel-inner">
     <?php
         $i = 0;
@@ -64,17 +69,17 @@
             <span class="bold">FEATURED</span><span> PARTNER</span>
           </div>
           <div class="featured-perk-name">
-            <div class="bold featured-perk-name-div"><div class="new-bar"></div><?php the_title(); ?></div>
+            <div class="bold featured-perk-name-div"><?php the_title(); ?></div>
           </div>
           <div class="featured-perk-address">
             <span><?php the_field('address'); ?></span>
           </div>
+          <a class="featured-link" href="<? the_field('site_link'); ?>" aria-label="<? the_title(); ?> website" target="_blank" rel="nofollow">Visit Website</a>
         </div>
       </div>
       <?php endwhile; ?>
       <?php wp_reset_postdata(); ?>
       <?php endif; ?>
-      <div class="gradient"></div>
     </div>
   </div><!-- END CAROUSEL -->
 
