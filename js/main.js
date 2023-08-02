@@ -1,6 +1,5 @@
 // js to run after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
-  console.log("DOM loaded");
   // wait for entire page to load then call functions and run some stuff
   window.addEventListener('load', (event) => {
     counter = 0;
@@ -42,6 +41,25 @@ function contactUs() {
   document.getElementById("contact-form-toggle").classList.remove("contact-form");
   document.getElementById("contact-form-toggle").classList.remove("contact-form-hide");
   document.getElementById("form-bg").style.display = "block";
+  document.addEventListener('keydown', closeFormEsc);
+  // document.addEventListener('keydown', function(event) {
+  //   if (event.key == "Escape") {
+  //     if (form.classList.contains("contact-form-show")) {
+  //       form.classList.toggle("contact-form-show");
+  //       form.classList.toggle("contact-form-hide");
+  //       document.getElementById("form-bg").style.display = "none";
+  //     }
+  //   }
+  // })
+}
+
+function closeFormEsc() {
+  if (window.event.key == "Escape") {
+    form.classList.remove('contact-form-show');
+    form.classList.add('contact-form-hide');
+    document.getElementById("form-bg").style.display = "none";
+  }
+  document.removeEventListener('keydown', closeFormEsc);
 }
 
 function closeForm() {
@@ -50,25 +68,8 @@ function closeForm() {
     form.classList.toggle("contact-form-hide");
     document.getElementById("form-bg").style.display = "none";
   }
+  document.removeEventListener('keydown', closeFormEsc);
 }
-
-$(document).on(
-  'keydown', function(event) {
-    if (event.key == "Escape") {
-      if (form.classList.contains("contact-form-show")) {
-        form.classList.toggle("contact-form-show");
-        form.classList.toggle("contact-form-hide");
-        document.getElementById("form-bg").style.display = "none";
-      }
-    }
-});
-
-
-// code to make "show more" section ease in and out AND fixing featured partner bar length for short company names ("like Dunkin'")
-
-// showMoreCards = document.getElementById("more-cards");
-// cardList = showMoreCards.querySelectorAll(".card"); //gets all cards (if there are 4, will get 4)
-// moreCardsStyle = document.documentElement.style; // for less messy code
 
 setHeight();
 
@@ -82,58 +83,8 @@ window.addEventListener("resize", function(event) {
 // 		document.querySelector(".load-more").style.display = "none";
 // }
 
-function setHeight() {
-  // cardHeight = document.querySelector(".card").offsetHeight; // gets height of card (cannot use style.height as it is not hardcoded into css)
-  // cardHeightPlusMargin = cardHeight + 120;
-  screenWidth = window.innerWidth; // used to find how many rows there will be
-
-  // if (screenWidth >= 1236) /* 3 cards per row */ {
-  //   if (cardList.length > 0 && cardList.length < 4) {
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("1-3 cards, desktop");
-  //   } else if (cardList.length > 3) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*2;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("3+ cards, desktop");
-  //   }
-  // } else if (screenWidth >= 600) /* 2 cards per row */ {
-  //   if (cardList.length > 0 && cardList.length < 3) {
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("1-3 cards, tablet");
-  //   } else if (cardList.length > 2 && cardList.length < 5) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*2;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("3-4 cards, tablet");
-  //   } else if (cardList.length > 4) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*3;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("4+ cards, tablet");
-  //   }
-  // } else {
-  //   if (cardList.length === 1) {
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("1 card, mobile");
-  //   } else if (cardList.length === 2) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*2;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("2 cards, mobile");
-  //   } else if (cardList.length === 3) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*3;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("3 cards, mobile");
-  //   } else if (cardList.length === 4) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*4;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("4 cards, mobile");
-  //   } else if (cardList.length === 5) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*5;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("5 cards, mobile");
-  //   } else if (cardList.length === 6) {
-  //     cardHeightPlusMargin = cardHeightPlusMargin*6;
-  //     moreCardsStyle.setProperty('--more-cards-height', cardHeightPlusMargin+'px');
-  //     //console.log("6 cards, mobile");
-  //   }
+  function setHeight() {
+    screenWidth = window.innerWidth;
   }
 
   // for setting featured partner bar length when company name is too short
@@ -164,9 +115,6 @@ function setHeight() {
     f += 1;
 
   });
-
-//console.log("card height: "+cardHeight);
-//console.log("card height + margin: "+cardHeightPlusMargin);
 
 
 /* ---------------------------------------------------------------------------- MENU JS CODE */
@@ -243,38 +191,38 @@ function slideLoginCancel() {
   login.classList.remove("slide-back-small");
 
   counter = 0;
-
-  /*
-  if (scrnWidth < 540) {
-    if (login.classList.contains("animate-login")) {
-      login.classList.remove("animate-login");
-      login.classList.add("animate-login-small");
-    } else if (login.classList.contains("slide-back")) {
-      login.classList.remove("slide-back");
-      login.classList.add("slide-back-small");
-    }
+}
 
 
-  } else {
-    if (login.classList.contains("animate-login-small")) {
-      login.classList.remove("animate-login-small");
-      login.style.animationDuration = "0s";
-      login.classList.add("animate-login");
-      login.style.animationDuration = ".7s";
-    } else if (login.classList.contains("slide-back-small")) {
-      login.classList.remove("slide-back-small");
-      login.style.animationDuration = "0s";
-      login.classList.add("slide-back");
-      login.style.animationDuration = ".7s";
-    }
 
-  }
-  if (login.classList.contains("animate-login-small")) {
-    login.classList.toggle("animate-login-small");
-    login.classList.add("slide-back-small");
-  } else if (login.classList.contains("animate-login")) {
-    login.classList.toggle("animate-login");
-    login.classList.add("slide-back");
-  }
-  */
+// UNIVERSAL DROPDOWN TOGGLE
+
+i = 0;
+
+function dropdownToggle(currentDropdownButton, currentDropdownListID) {
+   currentDropdownList = document.getElementById(currentDropdownListID);
+
+   resetSubMenus(currentDropdownList);
+
+   currentDisplay = window.getComputedStyle(currentDropdownList).display;
+   if (i == 0) {
+      currentDropdownList.setAttribute('aria-hidden','');
+      i = 1;
+   } else {
+      currentDropdownList.setAttribute('aria-hidden','true');
+      i = 0;
+   }
+   currentDropdownButton.parentElement.classList.toggle('nav-item-bold');
+   currentDropdownList.classList.toggle('display-toggle-dropdown');
+}
+
+function resetSubMenus() {
+   dropdownItems = document.querySelectorAll('.dropdown-item');
+   dropdownItems.forEach(dropdown => {
+      if (dropdown != currentDropdownList) {
+         dropdown.setAttribute('aria-hidden','true');
+         dropdown.classList.remove('display-toggle-dropdown');
+         dropdown.parentElement.classList.remove('nav-item-bold');
+      }
+   });
 }

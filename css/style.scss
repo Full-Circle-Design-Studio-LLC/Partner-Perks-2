@@ -1,6 +1,9 @@
 @use 'components/components';
 @use 'components/variables' as v;
+@use 'components/nav';
 @use 'components/perks-subnav';
+@use 'components/popup-menu';
+@use 'pages/page-404';
 $phone-max: 700px;
 $tablet-max: 1100px;
 
@@ -23,6 +26,14 @@ $tablet-max: 1100px;
 @keyframes unhideCards {
   0% {height: 0;}
   100% {height: var(--more-cards-height);}
+}
+
+.button-remove-style {
+  background-color: unset;
+  border: none;
+}
+.button-remove-style:focus {
+  outline: none;
 }
 
 // registration
@@ -254,6 +265,16 @@ footer {
   }
 }
 
+.pp-button {
+  color: white;
+  background-color: #a1dfd4;
+  padding: 5px 20px;
+}
+.pp-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .company-cards,
 .load-more-company-card-hide,
 .load-more-company-cards-unhide {
@@ -272,6 +293,37 @@ footer {
       color: #FFFFFF;
       position: relative;
 
+      .carousel-indicators {
+        display: none;
+        bottom: 35px;
+        li {
+          width: 11px;
+          height: 11px;
+          border: 2px solid #5C5D60;
+          border-radius: 99px;
+          background-color: unset;
+          opacity: 1;
+        }
+        .active {
+          background-color: #5C5D60;
+        }
+      }
+      .featured-link {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 10px;
+        color: #22ac9b;
+        font-weight: 700;
+        font-size: 20px;
+        width: fit-content;
+        height: 48px;
+        padding-top: 9px;
+      }
+      .featured-link:hover {
+        text-decoration: none;
+      }
       .carousel-item img {
         height: 100vh;
         width: 100vw;
@@ -279,30 +331,46 @@ footer {
       }
       .featured-perk-content {
         position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
         text-align: center;
-        bottom: 8vh;
-        width: 100%;
+        bottom: 30px;
+        width: calc(100% - 60px);
+        padding: 30px 30px 55px 30px;
         z-index: 1;
+        background-color: rgb(255 255 255 / 75%);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        color: black;
       }
       .featured-perk-text {
-        width: 85vw;
+        white-space: nowrap;
         margin-left: auto;
         margin-right: auto;
-        font-size: 27px;
         position: relative;
         z-index: 1;
+        width: 206px;
+        font-size: 18px;
+      }
+      @media (min-width: 450px) {
+        .featured-perk-text {
+          width: 323px;
+          font-size: 27px;
+        }
       }
       .bar {
         position: absolute;
-        bottom: 0;
-        height: 24px;
+        bottom: 1px;
+        height: 12px;
         width: 100%;
-        background-color: #22AC9B;
+        background-color: #98DACE;
         z-index: -1;
       }
       .featured-perk-name {
         font-size: 42px;
         line-height: 42px;
+        margin-top: 15px;
         .featured-perk-name-div {
           width: fit-content;
           position: relative;
@@ -312,13 +380,7 @@ footer {
       .featured-perk-address {
         font-size: 14px;
         text-align: center;
-      }
-      .gradient {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 35vh;
-        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.5));
+        margin-top: 5px;
       }
     }
     @keyframes delay-pointer-events {
@@ -330,7 +392,6 @@ footer {
       }
   }
     .partner-perks {
-      padding: 4%;
       .visit-site {
         position: absolute;
         display: none;
@@ -364,7 +425,6 @@ footer {
         padding: 0;
       }
       .partner-perks-title {
-        margin-top: 5vh;
         line-height: 36px;
       }
       a {
@@ -449,9 +509,6 @@ footer {
         a{
           color: v.$turquoise;
         }
-      }
-      .discount-code {
-        display: none;
       }
       .company-cards {
         position: relative;
@@ -611,26 +668,27 @@ footer {
       }
       .load-more {
         display: flex;
-        margin: 40px auto 30px auto;
+        align-items: center;
+        margin: 40px auto 0 auto;
         text-align: center;
         color: #333033;
         justify-content: center;
+        img {
+          margin-left: 10px;
+          width: 24px;
+        }
+        .arrow-up {
+          display: none;
+        }
+        .load-more-text {
+          flex-shrink: 0;
+        }
         .load-more-and-icon {
           display: flex;
           background: none;
           border: none;
           align-items: center;
           outline: none;
-          img {
-            margin-left: 10px;
-            width: 24px;
-          }
-          .arrow-up {
-            display: none;
-          }
-          .load-more-text {
-            flex-shrink: 0;
-          }
         }
         .load-more-and-icon:hover {
           cursor: pointer;
@@ -644,9 +702,7 @@ footer {
           text-align: center;
           margin-top: 0;
           line-height: 60px;
-          span {
-            font-size: 60px;
-          }
+          font-size: 60px;
         }
         .partner-perks-text {
           margin: 2vh 0 50px 0;
@@ -681,38 +737,8 @@ footer {
         }
       }
     }
-    .payment {
-      display: none;
-      background-color: #A1DFD4;
-      color: #FFFFFF;
-      padding-top: 10vh;
-      padding-bottom: 10vh;
-      .header-1 {
-        font-size: 51px;
-        line-height: 51px;
-      }
-      .header-2 {
-        font-size: 45px;
-        margin-top: 10vh;
-        font-weight: bold;
-        line-height: 48px;
-      }
-      .apple {
-        margin-top: 10vh;
-        img {
-          width: 238px;
-          height: 74px;
-        }
-      }
-      .google {
-        margin-top: 15px;
-        img {
-
-        }
-      }
-    }
     .become-partner {
-      padding: 55px;
+      background-color: white;
       .become-partner-title {
         line-height: 36px;
         div {
@@ -731,9 +757,7 @@ footer {
         width: 180px;
         height: 45px;
         background-color: #A1DFD4;
-        .text {
-          color: white;
-        }
+        color: white;
       }
       .contact-us:hover {
         text-decoration: none;
@@ -749,11 +773,9 @@ footer {
         .profile-photo {
           margin-top: 5vh;
           margin-bottom: 20px;
-
-          img {
-            width: 100%;
-            height: auto;
-          }
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1/1;
         }
         .profile-info {
           font-size: 20px;
@@ -763,7 +785,6 @@ footer {
     .mailing-list {
       background-color: #F1F1F1;
       text-align: center;
-      margin-top: 6vh;
       .mailing-list-text {
         font-size: 30px;
         line-height: 32px;
@@ -795,24 +816,14 @@ footer {
       .sign-up:hover {
         text-decoration: none;
       }
-      .terms-privacy {
+      .privacy {
         font-size: 21px;
-        .terms {
-          a {
-            color: #B7B7B7;
-          }
-          a:hover {
-            text-decoration: none;
-          }
-        }
-        .privacy {
-          a {
-            color: #B7B7B7;
-          }
-          a:hover {
-            text-decoration: none;
-          }
-        }
+        color: #B7B7B7;
+        width: fit-content;
+        margin: auto;
+      }
+      .privacy:hover {
+        text-decoration: none;
       }
     }
   }
@@ -823,9 +834,7 @@ footer {
   .main-content {
     .partner-perks {
       .partner-perks-title {
-        span {
-          font-size: 33px;
-        }
+        font-size: 33px;
       }
       .partner-perks-text {
         margin-top: 40px;
@@ -835,39 +844,14 @@ footer {
         margin-top: 0;
       }
     }
-    .payment {
-    padding-left: 30px;
-    padding-right: 30px;
-    }
     .become-partner {
       .become-partner-title {
       font-size: 33px;
       }
     }
     .become-partner {
-      .become-partner-text {
-        margin-bottom: 75px;
-      }
       .profiles {
         margin-top: 50px;
-        @media screen and (min-width: 510px) {
-          margin-left: 8vw;
-          margin-right: 8vw;
-        }
-      }
-    }
-    .mailing-list {
-      .mailing-list-text {
-        padding: 10vh 10vw 0 10vw;
-      }
-    }
-    .terms-privacy {
-      .terms {
-        margin-top: 30vh;
-      }
-      .privacy {
-        margin-top: 15px;
-        padding-bottom: 8vh;
       }
     }
   }
@@ -916,16 +900,24 @@ footer {
     }
     .featured-perk {
       .featured-perk-content {
-        max-width: 50%;
-        right: 10%;
+        padding: 45px 35px 75px;
+      }
+      .carousel-indicators {
+        display: flex;
+        bottom: 25px;
+      }
+      .featured-link {
+        bottom: 32px;
+        padding-top: 12px;
       }
       .featured-perk-text {
         font-size: 34px;
-        width: auto;
+        width: 400px;
         text-align: center;
         line-height: 1;
         .bar {
-          height: 22px;
+          height: 20px;
+          bottom: -4px;
         }
       }
       .featured-perk-name {
@@ -943,34 +935,6 @@ footer {
       }
     }
 
-  .payment {
-    padding-left: 14vw;
-    padding-right: 14vw;
-    .header-1 {
-      display: flex;
-      div {
-      font-size: 46px;
-      }
-      .made-easy {
-        margin-right: 1rem;
-      }
-    }
-    .header-2 {
-      span {
-        font-size: 72px;
-      }
-    }
-    .add-card {
-      .pay-links {
-      }
-      .header-2 {
-        .add-card-text {
-          font-size: 60px;
-          line-height: 1.1;
-        }
-      }
-    }
-  }
   .become-partner {
     .become-partner-title {
       display: flex;
@@ -998,9 +962,8 @@ footer {
         margin-left: 5px;
         margin-right: 5px;
         .profile-photo {
-          img {
-            max-height: 318px;
-          }
+          max-height: 318px;
+          width: auto;
         }
         .profile-info {
           .profile-role,
@@ -1049,17 +1012,8 @@ footer {
         }
       }
     }
-    .terms-privacy {
-      display: flex;
-      justify-content: space-between;
-      margin: 70px 18vw 0 18vw;
-      .terms {
-        margin: 0;
-      }
-      .privacy {
-        margin: 0;
-        padding: 0;
-      }
+    .privacy {
+      margin: 70px auto 0 auto;
     }
   }
 }
@@ -1084,9 +1038,7 @@ footer {
   .main-content {
     .partner-perks {
       .partner-perks-title {
-        span {
-          font-size: 62px!important;
-        }
+        font-size: 62px!important;
       }
       .partner-perks-text {
         margin: 45px 16vw 50px 16vw!important;
@@ -1137,70 +1089,37 @@ footer {
         left: 0;
         width: 100%;
       }
+      .carousel-indicators {
+        bottom: 40px;
+      }
+      .featured-link {
+        bottom: 38px;
+        padding-top: 0;
+        height: auto;
+      }
       .featured-perk-content {
-        right: 8%;
-        bottom: 180px;
-        max-width: 60%;
+        max-width: 70%;
+        bottom: 45px;
         .featured-perk-text {
           line-height: 1;
-          font-size: 46px;
+          font-size: 36px;
+          width: 420px;
         }
         .bar {
-          display: none;
-        }
-        .new-bar {
-          display: block;
-          position: absolute;
-          top: -29px;
-          height: 26px;
-          background-color: #22AC9B;
-          z-index: -1;
-          width: 100%;
-          min-width: 500px;
+          height: 22px;
         }
         .featured-perk-name {
-          line-height: 80px;
-          font-size: 100px;
+          line-height: 50px;
+          font-size: 54px;
           text-align: center;
         }
         .featured-perk-address {
-          font-size: 27px;
-        }
-      }
-    }
-    .payment {
-      padding: 20vh 12vw!important;
-      .header-1 {
-        justify-content: center;
-        div {
-        font-size: 56px;
-        }
-      }
-      .add-card {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: center;
-        margin-top: 12vh;
-        .pay-links {
-          margin-right: 1.5vw;
-          .apple {
-            margin-top: 0;
-          }
-        }
-        .header-2 {
-          margin-top: 0;
-          margin-left: 1.5vw;
-          max-width: 848px;
-          .add-card-text {
-            font-size: 61px;
-          }
+          font-size: 20px;
         }
       }
     }
     .become-partner {
       .become-partner-title {
-        margin-top: 12vh;
         margin-bottom: 65px;
         h3 {
           font-size: 60px;
@@ -1248,28 +1167,43 @@ footer {
         margin-bottom: 40px;
       }
       .sign-up-boxes {
-        height: 65px;
+        height: 55px;
         margin-top: 10px;
         .email-field {
           input {
-            height: 100%;
+            height: 55px;
             max-width: 900px;
           }
         }
         .sign-up {
-          height: 100%;
+          height: 55px;
           width: 210px;
           font-size: 32px;
         }
       }
-      .terms-privacy {
-        justify-content: center;
-        .terms {
-          margin-right: 5vw;
-        }
-        .privacy {
-          margin-left: 5vw;
-        }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-content .featured-perk {
+    .featured-perk-content {
+      bottom: 60px;
+    }
+    .carousel-indicators {
+      bottom: 60px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .main-content {
+    .featured-perk {
+      .featured-perk-content {
+        bottom: 85px;
+      }
+      .carousel-indicators {
+        bottom: 85px;
       }
     }
   }
