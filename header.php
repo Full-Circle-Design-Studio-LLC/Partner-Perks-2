@@ -8,12 +8,6 @@
 
 <header class="col-12 float-left">
 
-    <div class="logo-container offset-lg-0 offset-lg-0 float-left">
-  <a href="https://www.burnsscalorealestate.com" class="float-left p-0 d-xl-none"><img src="<?php echo get_template_directory_uri(); ?>/assets/mark.svg" alt="Burns Scalo logo to home page" class="col-12 float-left p-0" width="30" height="25"></a>
-  <a href="https://www.burnsscalorealestate.com" class="d-none d-xl-block d-xl-block float-left p-0"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Burns Scalo logo to home page" class="col-12 float-left p-0"></a>
-</div>
-  <h5 class="#">A Luxury Real Estate Firm</h5>
-
   <button onclick="dropdownMenu()" class="menu-container d-xl-none float-left button-remove-style">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/menu.svg" alt="Dropdown Menu" width="30" height="18">
   </button>

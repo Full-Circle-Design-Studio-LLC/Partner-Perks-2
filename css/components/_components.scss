@@ -19,6 +19,45 @@ button {
   color: inherit;
 }
 
+//SOCIAL FOOTER
+.social-footer{
+  float: left;
+  background-color: white;
+  span{
+    float: left;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #DEDEDE;
+    text-align: center;
+    font-size: 16px!important;
+  }
+  ul{
+  float: left;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  margin-left: 10vw;
+  list-style: none;
+  padding: 0;
+  li{
+    a{
+      img{
+        height: 30px;
+        margin: 15px;
+      }  //close img
+    }  //close a
+  }  //close li
+
+li:nth-child(1){
+  a{
+    img{
+      margin-right: 7.5px!important;
+    }
+  }
+}
+
+}  //close ul
+}//close social footer
 //COMPONENT-HEADER -----------------------------------------------------------------
 
 header{

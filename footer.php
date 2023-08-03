@@ -1,4 +1,15 @@
 <?php wp_footer(); ?>
+<div class="social-footer col-12">
+  <span class="small-headline col-10 offset-1">CONNECT WITH BURNS SCALO REAL ESTATE</span>
+  <ul>
+    <li><a href="https://www.linkedin.com/company/burns-&-scalo-real-estate-services" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/linkedin.svg" alt="LinkedIn"></a></li>
+    <li><a href="https://www.instagram.com/BurnsScaloRE/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/instagram.svg" alt="Instagram"></a></li>
+    <li><a href="https://www.facebook.com/burnsscalo" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/facebook.svg" alt="Facebook"></a></li>
+    <li><a href="https://twitter.com/burnsscalore" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/twitter.svg" alt="Twitter"></a></li>
+</ul>
+</div>
+
+<!--
 <div id="employee-login-menu-background" class="popup-menu-background" onclick="popupMenuToggle()"></div>
 <div id="employee-login-menu" class="popup-menu popup-menu_standard popup-menu_centered popup-menu_login">
   <button class="button_close button-remove-style" onclick="popupMenuToggle()">
@@ -69,7 +80,6 @@
     <?php endif;?>
 </ul>
 
-<!-- CURRENT USER -->
 <div class="user-panel col-2 float-left d-none">
   <span>
   <?php
@@ -88,14 +98,12 @@
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-  <!-- END CURRENT USER-->
-
   <button onclick="footerExpand(), footerListRemove()" class="col-1 float-left button-remove-style">
     <img class="cursor-pointer" src="<?php echo get_template_directory_uri(); ?>/assets/close-x.svg" alt="X to close" width="25" height="25">
   </button>
   </div>
 </div>
-
+-->
 <script defer src="<?php echo get_template_directory_uri(); ?>/js/popup-menu.js"></script>
 <script type="text/javascript">
     (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
