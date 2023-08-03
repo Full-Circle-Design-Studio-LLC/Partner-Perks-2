@@ -1,6 +1,4 @@
 <?php wp_footer(); ?>
-
-
 <div class="social-footer col-12">
   <span class="small-headline col-10 offset-1">CONNECT WITH BURNS SCALO REAL ESTATE</span>
   <ul>
@@ -82,7 +80,6 @@
     <?php endif;?>
 </ul>
 
-
 <div class="user-panel col-2 float-left d-none">
   <span>
   <?php
@@ -100,8 +97,6 @@
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
- 
 
   <button onclick="footerExpand(), footerListRemove()" class="col-1 float-left button-remove-style">
     <img class="cursor-pointer" src="<?php echo get_template_directory_uri(); ?>/assets/close-x.svg" alt="X to close" width="25" height="25">
