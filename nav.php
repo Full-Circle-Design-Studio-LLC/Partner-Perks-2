@@ -81,3 +81,5 @@
 <a class="nav-home-link" href="<?php echo get_site_url(); ?>">
   <img src="<?php echo get_template_directory_uri(); ?>/assets/burns-scalo-real-estate-nav-logo.svg" alt="Burns Scalo Real Estate Logo" width="160" height="27.6">
 </a>
+
+<!-- -->
