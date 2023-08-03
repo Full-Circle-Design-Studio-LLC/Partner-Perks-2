@@ -18,7 +18,7 @@
           <a href="http://burnsscalorealestate.com/portfolio/">Portfolio</a>
         </div>
         <div class="dropdown-item-group">
-          <a href="burnsscalorealestate.com/property-management/">Management</a>
+          <a href="http://burnsscalorealestate.com/property-management/">Management</a>
           <a href="https://partner-perks.burnsscalorealestate.com/">Partner Perks</a>
           <a href="https://www.securecafe3.com/tenantportal/commercialleasing/userlogin.aspx?companyid=1">Client Portal</a>
         </div>

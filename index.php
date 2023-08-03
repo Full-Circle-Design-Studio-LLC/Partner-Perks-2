@@ -186,7 +186,7 @@
       <?php endif; ?>
       </div>
     </div>
-      <button class="accordion-button load-more-and-icon button-remove-style load-more" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="loadMore()">
+      <button class="accordion-button load-more-and-icon button-remove-style load-more" type="button" data-toggle="collapse" data-target="#collapseOne" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="loadMore()">
         <span id="load-more-span" class="load-more-text">LOAD MORE</span>
         <img class="arrow-down" id="arrow-down" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg?" alt="" width="24" height="13">
         <img class="arrow-up" id="arrow-up" src="<?php echo get_template_directory_uri(); ?>/assets/arrow-up.svg?" alt="" width="24" height="13">
